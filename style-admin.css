@@ -1,0 +1,15 @@
+.dable-input-tag {
+	position: relative;
+}
+
+.dable-input-tag__input {
+	padding-left: 5em;
+}
+
+.dable-input-tag__tag {
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	font-size: 12px;
+	color: #999;
+}
