@@ -3,6 +3,7 @@
 Plugin Name: Dable for WordPress
 Description: Adds meta tags for Dable and SEO.
 Author: Dable
+Text Domain: dable
 Version: 1.2.0
 Author URI: https://dable.io
 */

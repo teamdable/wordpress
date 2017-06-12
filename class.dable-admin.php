@@ -45,34 +45,34 @@ class DableAdmin {
 		);
 		add_settings_section(
 			'default-section',
-			'기본 설정',
+			__('기본 설정'),
 			array( $this, 'print_section_info' ),
 			'dable-for-wordpress'
 		);
 		add_settings_field(
 			'service_name',
-			'서비스 이름',
+			__('서비스 이름'),
 			array( $this, 'print_service_name_option' ),
 			'dable-for-wordpress',
 			'default-section'
 		);
 		add_settings_field(
 			'print_og_tag',
-			'Open Graph 태그 출력',
+			__('Open Graph 태그 출력'),
 			array( $this, 'print_og_option' ),
 			'dable-for-wordpress',
 			'default-section'
 		);
 		add_settings_field(
 			'wrap_content',
-			'컨텐트 래퍼 출력',
+			__('컨텐트 래퍼 출력'),
 			array( $this, 'print_content_wrapper_option' ),
 			'dable-for-wordpress',
 			'default-section'
 		);
 		add_settings_field(
 			'display_widget',
-			'위젯',
+			__('위젯'),
 			array( $this, 'print_widget_option' ),
 			'dable-for-wordpress',
 			'default-section'
@@ -177,7 +177,7 @@ class DableAdmin {
 	 * Print section information
 	 */
 	public function print_section_info() {
-		echo '필요한 기본 설정을 입력하세요.';
+		echo __('필요한 기본 설정을 입력하세요.');
 	}
 
 	/**
@@ -187,7 +187,12 @@ class DableAdmin {
 		$print_og_tag = $this->get_option( 'print_og_tag' ) ? ' checked' : '';
 ?>
 		<input type="checkbox" id="print_og_tag" name="dable-settings[print_og_tag]" <?php echo esc_attr( $print_og_tag ); ?> value="true">
-		<label for="print_og_tag"><a href="http://ogp.me/">Open Graph</a> 태그를 생성합니다. 이미 같은 기능을 하는 플러그인을 사용하고 있다면 체크를 해제하세요.</label>
+    <label for="print_og_tag"><?php
+      echo wp_kses(
+        __('<a href="http://ogp.me/">Open Graph</a> 태그를 생성합니다. 이미 같은 기능을 하는 플러그인을 사용하고 있다면 체크를 해제하세요.'),
+        array('a' => array('href' => array() ) )
+      );
+    ?></label>
 <?php
 	}
 
@@ -198,7 +203,12 @@ class DableAdmin {
 		$wrap_content = $this->get_option( 'wrap_content' ) ? ' checked' : '';
 ?>
 		<input type="checkbox" id="wrap_content" name="dable-settings[wrap_content]" <?php echo esc_attr( $wrap_content ); ?> value="true" >
-		<label for="wrap_content">컨텐트를 <code>&lt;div itemprop="articleBody"&gt;</code>로 감쌉니다. 필요하지 않으면 체크를 해제하세요.</label>
+    <label for="wrap_content"><?php
+      echo wp_kses(
+        __('컨텐트를 <code>&lt;div itemprop="articleBody"&gt;</code>로 감쌉니다. 필요하지 않으면 체크를 해제하세요.'),
+        array('code' => array() )
+      );
+    ?></label>
 <?php
 	}
 
@@ -227,7 +237,7 @@ class DableAdmin {
 				value="<?php echo esc_attr( $service_mobile ); ?>"
 				class="regular-text dable-input-tag__input">
 		</p>
-		<p>Dable 스크립트에 설정할 서비스 이름입니다.</p>
+    <p><?php echo ('Dable 스크립트에 설정할 서비스 이름입니다.'); ?></p>
 <?php
 	}
 
@@ -238,8 +248,8 @@ class DableAdmin {
 	 * @param string $platform Platform type.
 	 */
 	protected function print_widget_code_field( $widget_type, $platform = '' ) {
-		$placeholder = '위젯 코드를 입력하세요.';
-		$widget_pos  = array( 'bottom' => '본문 하단', 'left' => '본문 좌측', 'right' => '본문 우측' );
+		$placeholder = __('위젯 코드를 입력하세요.');
+		$widget_pos  = array( 'bottom' => __('본문 하단'), 'left' => __('본문 좌측'), 'right' => __('본문 우측') );
 
 		foreach ( $widget_pos as $key => $text ) :
 			$key = strtolower( $platform ? $platform : $widget_type ) . '_' . $key;
@@ -275,9 +285,9 @@ class DableAdmin {
 ?>
 		<p>
 			<input type="radio" id="widget_type_responsive" name="dable-settings[widget_type]" <?php echo 'responsive' === $widget_type ? 'checked' : '' ?> value="responsive">
-			<label for="widget_type_responsive">반응형 스크립트 사용</label>
+      <label for="widget_type_responsive"><?php echo __('반응형 스크립트 사용'); ?></label>
 			<input type="radio" id="widget_type_platform" name="dable-settings[widget_type]" <?php echo 'platform' === $widget_type ? 'checked' : '' ?> value="platform">
-			<label for="widget_type_platform">PC/Mobile 개별 스크립트 사용</label>
+      <label for="widget_type_platform"><?php echo __('PC/Mobile 개별 스크립트 사용'); ?></label>
 		</p>
 		<hr />
 
