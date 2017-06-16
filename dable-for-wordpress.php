@@ -6,6 +6,7 @@ Author: Dable
 Text Domain: dable
 Version: 1.3.0
 Author URI: https://dable.io
+Domain Path: /languages
 */
 /**
  * @package dable
@@ -13,6 +14,11 @@ Author URI: https://dable.io
  */
 
 define( 'DABLE_PLUGIN_BASENAME', plugin_basename(__FILE__) );
+
+function dable_textdomain() {
+  load_plugin_textdomain( 'dable', false, dirname(plugin_basename(__FILE__)) . '/languages' );
+}
+add_action( 'plugins_loaded', 'dable_textdomain' );
 
 require __DIR__ . '/class.dable.php';
 new Dable();
