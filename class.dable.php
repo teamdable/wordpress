@@ -50,6 +50,10 @@ class Dable
 			unset( $meta['og:image'] );
 		}
 
+		if ( get_post_status( $post->ID ) !== 'publish' || post_password_required( $post ) || !empty($post->post_password) ) {
+			unset($meta['dable:item_id']);
+		}
+
 		$categories = get_the_category( $post->ID );
 		foreach ( $categories as $idx=>$category ) {
 			$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
