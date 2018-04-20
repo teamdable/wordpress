@@ -17,7 +17,7 @@ define( 'DABLE_PLUGIN_VERSION', '1.3.4' );
 define( 'DABLE_PLUGIN_BASENAME', plugin_basename(__FILE__) );
 define( 'DABLE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
-require_once DABLE_PLUGIN_DIR . 'functions.php';
+require_once DABLE_PLUGIN_DIR . 'lib/functions.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable.php';
 
 new Dable();

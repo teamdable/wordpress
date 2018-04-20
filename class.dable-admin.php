@@ -34,8 +34,8 @@ class DableAdmin {
 	 * Initialize the admin page
 	 */
 	public function page_init() {
-		wp_enqueue_style( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'style-admin.css', array(), DABLE_PLUGIN_VERSION );
-		wp_enqueue_script( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'admin.js', array( 'jquery' ), DABLE_PLUGIN_VERSION );
+		wp_enqueue_style( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'assets/style-admin.css', array(), DABLE_PLUGIN_VERSION );
+		wp_enqueue_script( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'assets/admin.js', array( 'jquery' ), DABLE_PLUGIN_VERSION );
 
 		// Default Settings
 		register_setting(

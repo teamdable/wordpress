@@ -11,7 +11,7 @@ function dable_migrate() {
 	$current_major_version = intval( DABLE_PLUGIN_VERSION );
 
 	if ( $installed_major_version !== $current_major_version ) {
-		require_once DABLE_PLUGIN_DIR . 'migration.php';
+		require_once DABLE_PLUGIN_DIR . 'lib/migration.php';
 	}
 
 	for( $i = $installed_major_version; $i < $current_major_version; $i++ ) {
