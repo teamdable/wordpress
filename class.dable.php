@@ -21,13 +21,19 @@ class Dable
 		);
 		$options = get_option( 'dable-settings', $defaults );
 
+		// target post types
+		$post_types = get_option( 'dable-target-post-types', array( 'post' ) );
+		$options['target_post_types'] = $post_types;
+
 		// Open Graph settings
 		$og_options = get_option( 'dable-og-settings', array() );
 
 		// widget settings
 		$widget_options = get_option( 'dable-widget-settings', array() );
 
-		return array_merge( $defaults, $options, $og_options, $widget_options );
+		$options = array_merge( $defaults, $options, $og_options, $widget_options );
+
+		return $options;
 	}
 
 	public function print_header() {
@@ -37,6 +43,8 @@ class Dable
 
 		the_post();
 		$post = get_post();
+
+		$is_eligible_type = in_array( get_post_type( $post ), $this->options['target_post_types'], true );
 
 		$meta = array(
 			'dable:item_id' => $post->ID,
@@ -58,6 +66,7 @@ class Dable
 		}
 
 		if (
+			! $is_eligible_type ||
 			get_post_status( $post->ID ) !== 'publish' ||
 			post_password_required( $post ) ||
 			! empty($post->post_password)
@@ -65,10 +74,11 @@ class Dable
 			unset( $meta['dable:item_id'] );
 		}
 
-
-		$categories = get_the_category( $post->ID );
-		foreach ( $categories as $idx=>$category ) {
-			$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
+		if ( $is_eligible_type ) {
+			$categories = get_the_category( $post->ID );
+			foreach ( $categories as $idx=>$category ) {
+				$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
+			}
 		}
 
 		rewind_posts();

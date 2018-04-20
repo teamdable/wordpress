@@ -13,3 +13,7 @@
 	font-size: 12px;
 	color: #999;
 }
+.dable-inline-checkbox {
+	display: inline-block;
+	margin-right: 1.5em;
+}

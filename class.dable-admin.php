@@ -66,6 +66,18 @@ class DableAdmin {
 			'default-section'
 		);
 
+		register_setting(
+			'dable-settings-group',
+			'dable-target-post-types'
+		);
+		add_settings_field(
+			'target_post_types',
+			__('Target Post Types', 'dable'),
+			array( $this, 'print_post_type_option' ),
+			'dable-for-wordpress',
+			'default-section'
+		);
+
 		// Open Graph Settings
 		register_setting(
 			'dable-settings-group',
@@ -165,6 +177,7 @@ class DableAdmin {
 			'service_name' => 'string',
 			'service_name_mobile' => 'string',
 			'wrap_content' => 'bool',
+			'target_post_types' => 'array',
 
 			// Open Graph settings
 			'print_og_tag' => 'bool',
@@ -323,6 +336,29 @@ class DableAdmin {
 					rows="4"
 				><?php echo esc_html( $this->get_option( 'widget_code_' . $key ) ); ?></textarea>
 			</p>
+<?php
+		endforeach;
+	}
+
+	/**
+	 * Print target post types option
+	 */
+	public function print_post_type_option() {
+		$post_types = get_option( 'dable-target-post-types', array( 'post' ) );
+		$registered_post_types = get_post_types( array('public'=>true), 'objects' );
+
+		foreach ( $registered_post_types as $key => $type ) :
+?>
+		<input
+			type="checkbox"
+			id="target_post_type_<?php echo esc_attr( $key ); ?>"
+			name="dable-target-post-types[]"
+			value="<?php echo esc_attr( $type->name ); ?>"
+			<?php echo in_array( $key, $post_types, true ) ? 'checked' : '' ?>
+		/>
+		<label for="target_post_type_<?php echo esc_attr( $key ); ?>" class="dable-inline-checkbox">
+			<?php echo esc_html( $type->label ); ?>
+		</label>
 <?php
 		endforeach;
 	}
