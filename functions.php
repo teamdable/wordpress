@@ -9,7 +9,6 @@ add_action( 'plugins_loaded', 'dable_textdomain' );
 function dable_migrate() {
 	$installed_major_version = intval( get_site_option('dable_plugin_version', '1.3.4') );
 	$current_major_version = intval( DABLE_PLUGIN_VERSION );
-	error_log( $installed_major_version );
 
 	if ( $installed_major_version !== $current_major_version ) {
 		require_once DABLE_PLUGIN_DIR . 'migration.php';
