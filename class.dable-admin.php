@@ -224,21 +224,20 @@ class DableAdmin {
 ?>
 		<p>
 			<input type="radio" id="print_og_tag_yes" name="dable-og-settings[print_og_tag]" <?php echo $print_og_tag ? 'checked' : ''; ?> value="true">
-			<label for="print_og_tag_yes"><?php
-				echo wp_kses(
-					__('Create <a href="http://ogp.me/">Open Graph</a> meta tags.', 'dable'),
-					array('a' => array('href' => array() ) )
-				);
-			?></label>
+			<label for="print_og_tag_yes">
+				<?php
+					echo wp_kses(
+						__('Create <a href="http://ogp.me/">Open Graph</a> meta tags.', 'dable'),
+						array('a' => array('href' => array() ) )
+					);
+				?>
+			</label>
 		</p>
 		<p>
 			<input type="radio" id="print_og_tag_no" name="dable-og-settings[print_og_tag]" <?php echo $print_og_tag ? '' : 'checked'; ?> value="">
-			<label for="print_og_tag_no"><?php
-				echo wp_kses(
-					__('Do not make Open Graph meta tags. If you are using a plugin that already has the same functionality, uncheck it.', 'dable'),
-					array('a' => array('href' => array() ) )
-				);
-			?></label>
+			<label for="print_og_tag_no">
+				<?php esc_html_e('Do not generate Open Graph meta tags. Select this option if you are using a plugin that already has the same functionality.', 'dable'); ?>
+			</label>
 		</p>
 <?php
 	}
