@@ -17,3 +17,7 @@
 	display: inline-block;
 	margin-right: 1.5em;
 }
+label[for*="dable_thumbnail_"] {
+	min-width: 10em;
+	vertical-align: baseline;
+}

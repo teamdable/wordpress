@@ -9,6 +9,11 @@ class Dable
 
 		add_action( 'wp_head', array( $this, 'print_header' ) );
 		add_filter( 'the_content',  array( $this, 'add_content_wrapper' ) );
+		add_image_size(
+			'dable-og-thumbnail',
+			$this->options['thumbnail_width'],
+			$this->options['thumbnail_height']
+		);
 	}
 
 	public static function get_options() {
@@ -17,7 +22,9 @@ class Dable
 			'wrap_content' => true,
 			'service_name' => '',
 			'service_name_mobile' => '',
-			'widget_type' => 'responsive'
+			'widget_type' => 'responsive',
+			'thumbnail_width' => 250,
+			'thumbnail_height' => 250
 		);
 		$options = get_option( 'dable-settings', $defaults );
 
@@ -37,14 +44,12 @@ class Dable
 	}
 
 	public function print_header() {
-		if ( ! is_single() ) {
+		if ( ! is_singular( $this->options['target_post_types'] ) ) {
 			return;
 		}
 
 		the_post();
 		$post = get_post();
-
-		$is_eligible_type = in_array( get_post_type( $post ), $this->options['target_post_types'], true );
 
 		$meta = array(
 			'dable:item_id' => $post->ID,
@@ -66,7 +71,6 @@ class Dable
 		}
 
 		if (
-			! $is_eligible_type ||
 			get_post_status( $post->ID ) !== 'publish' ||
 			post_password_required( $post ) ||
 			! empty($post->post_password)
@@ -74,11 +78,9 @@ class Dable
 			unset( $meta['dable:item_id'] );
 		}
 
-		if ( $is_eligible_type ) {
-			$categories = get_the_category( $post->ID );
-			foreach ( $categories as $idx=>$category ) {
-				$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
-			}
+		$categories = get_the_category( $post->ID );
+		foreach ( $categories as $idx=>$category ) {
+			$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
 		}
 
 		rewind_posts();
@@ -116,12 +118,36 @@ class Dable
 	}
 
 	public function get_thumbnail( $post ) {
+		$image_id = null;
+
 		if ( has_post_thumbnail( $post ) ) {
-			return get_the_post_thumbnail_url( $post, 'medium' );
+			$image_id = get_post_thumbnail_id( $post );
+		} elseif( ! empty( $media = get_attached_media( 'image', $post->ID ) ) ) {
+			$image = current( $media );
+			$image_id = $image->ID;
+		}
+
+		if ( $image_id ) {
+			// Does it has dable-og-thumbnail size image?
+			$attach_data = wp_get_attachment_metadata( $image_id, true );
+
+			// If not, create a new thumbnail for og:image.
+			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) ) {
+				if  ( ! function_exists( 'wp_crop_image' ) ) {
+					require_once ABSPATH . 'wp-admin/includes/image.php';
+				}
+
+				$filename = get_attached_file( $image_id );
+				$attach_data = wp_generate_attachment_metadata( $image_id, $filename );
+				wp_update_attachment_metadata( $image_id, $attach_data );
+			}
+
+			return wp_get_attachment_image_url( $image_id, 'dable-og-thumbnail' );
 		}
 
 		$content = get_the_content();
 
+		// It must be an external resource. We can't create a thumbnail so just use it as is.
 		if ( preg_match( '#<img[^>]*src=(["\'])(?P<url>.+?)\1[^>]*>#i', $content, $match ) > 0 ) {
 			return $match['url'];
 		}

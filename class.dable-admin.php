@@ -101,6 +101,14 @@ class DableAdmin {
 			'og-section'
 		);
 
+		add_settings_field(
+			'og_thumbnail_size',
+			__('Thumbnail Size', 'dable'),
+			array( $this, 'pring_thumbnail_size_option' ),
+			"dable-for-wordpress",
+			"og-section"
+		);
+
 		// Widget Settings
 		register_setting(
 			'dable-settings-group',
@@ -252,6 +260,21 @@ class DableAdmin {
 				<?php esc_html_e('Do not generate Open Graph meta tags. Select this option if you are using a plugin that already has the same functionality.', 'dable'); ?>
 			</label>
 		</p>
+<?php
+	}
+
+	public function pring_thumbnail_size_option() {
+		$min_width =$this->get_option( 'thumbnail_width', 250 );
+		$min_height =$this->get_option( 'thumbnail_height', 250 );
+?>
+		<fieldset>
+			<legend class="screen-reader-text"><?php esc_html_e( 'Open Graph thunbmail size' ); ?></legend>
+			<label for="dable_thumbnail_width"><?php esc_html_e( 'Max Width' ); ?></label>
+			<input type="text" id="dable_thumbnail_width" name="dable-og-settings[thumbnail_width]" size="5" value="<?php echo $min_width; ?>">
+			<br>
+			<label for="dable_thumbnail_height"><?php esc_html_e( 'Max Height' ); ?></label>
+			<input type="text" id="dable_thumbnail_height" name="dable-og-settings[thumbnail_height]" size="5" value="<?php echo $min_width; ?>">
+		</fieldset>
 <?php
 	}
 
