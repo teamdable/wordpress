@@ -13,18 +13,17 @@ Domain Path: /languages
  * @version 1.3.4
  */
 
+define( 'DABLE_PLUGIN_VERSION', '1.3.4' );
 define( 'DABLE_PLUGIN_BASENAME', plugin_basename(__FILE__) );
+define( 'DABLE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
-function dable_textdomain() {
-  load_plugin_textdomain( 'dable', false, dirname(plugin_basename(__FILE__)) . '/languages' );
-}
-add_action( 'plugins_loaded', 'dable_textdomain' );
+require_once DABLE_PLUGIN_DIR . 'functions.php';
+require_once DABLE_PLUGIN_DIR . 'class.dable.php';
 
-require __DIR__ . '/class.dable.php';
 new Dable();
 
 if ( is_admin() ) {
-	require __DIR__ . '/class.dable-admin.php';
+	require_once DABLE_PLUGIN_DIR . 'class.dable-admin.php';
 	new DableAdmin();
 }
 

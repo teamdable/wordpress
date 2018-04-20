@@ -17,11 +17,17 @@ class Dable
 			'wrap_content' => true,
 			'service_name' => '',
 			'service_name_mobile' => '',
-			'widget_type'  => 'responsive',
+			'widget_type' => 'responsive'
 		);
 		$options = get_option( 'dable-settings', $defaults );
 
-		return $options;
+		// Open Graph settings
+		$og_options = get_option( 'dable-og-settings', array() );
+
+		// widget settings
+		$widget_options = get_option( 'dable-widget-settings', array() );
+
+		return array_merge( $defaults, $options, $og_options, $widget_options );
 	}
 
 	public function print_header() {
@@ -31,6 +37,7 @@ class Dable
 
 		the_post();
 		$post = get_post();
+
 		$meta = array(
 			'dable:item_id' => $post->ID,
 			'article:published_time' => get_the_date( 'c', $post ),
@@ -50,9 +57,14 @@ class Dable
 			unset( $meta['og:image'] );
 		}
 
-		if ( get_post_status( $post->ID ) !== 'publish' || post_password_required( $post ) || !empty($post->post_password) ) {
-			unset($meta['dable:item_id']);
+		if (
+			get_post_status( $post->ID ) !== 'publish' ||
+			post_password_required( $post ) ||
+			! empty($post->post_password)
+		) {
+			unset( $meta['dable:item_id'] );
 		}
+
 
 		$categories = get_the_category( $post->ID );
 		foreach ( $categories as $idx=>$category ) {

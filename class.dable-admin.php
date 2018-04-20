@@ -34,19 +34,21 @@ class DableAdmin {
 	 * Initialize the admin page
 	 */
 	public function page_init() {
-		wp_enqueue_style( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'style-admin.css' );
+		wp_enqueue_style( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'style-admin.css', array(), DABLE_PLUGIN_VERSION );
+		wp_enqueue_script( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'admin.js', array( 'jquery' ), DABLE_PLUGIN_VERSION );
 
-		wp_enqueue_script( 'dable-for-wordpress', plugin_dir_url( __FILE__ ) . 'admin.js', array( 'jquery' ) );
-
+		// Default Settings
 		register_setting(
 			'dable-settings-group',
 			'dable-settings',
-			array( $this, 'sanitize' )
+			array(
+				'sanitize_callback' => array( $this, 'sanitize' )
+			)
 		);
 		add_settings_section(
 			'default-section',
 			__('Default Settings', 'dable'),
-			array( $this, 'print_section_info' ),
+			array( $this, 'print_default_section_info' ),
 			'dable-for-wordpress'
 		);
 		add_settings_field(
@@ -57,25 +59,56 @@ class DableAdmin {
 			'default-section'
 		);
 		add_settings_field(
-			'print_og_tag',
-			__('Open Graph Tag Setting', 'dable'),
-			array( $this, 'print_og_option' ),
-			'dable-for-wordpress',
-			'default-section'
-		);
-		add_settings_field(
 			'wrap_content',
 			__('Content Wrapper Setting', 'dable'),
 			array( $this, 'print_content_wrapper_option' ),
 			'dable-for-wordpress',
 			'default-section'
 		);
+
+		// Open Graph Settings
+		register_setting(
+			'dable-settings-group',
+			'dable-og-settings',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize' )
+			)
+		);
+		add_settings_section(
+			'og-section',
+			__('Open Graph', 'dable'),
+			null,
+			'dable-for-wordpress'
+		);
+
+		add_settings_field(
+			'print_og_tag',
+			__('Meta Tags', 'dable'),
+			array( $this, 'print_og_tag_option' ),
+			'dable-for-wordpress',
+			'og-section'
+		);
+
+		// Widget Settings
+		register_setting(
+			'dable-settings-group',
+			'dable-widget-settings',
+			array(
+				'sanitize_callback' => array( $this, 'sanitize' )
+			)
+		);
+		add_settings_section(
+			'widget-section',
+			__('Widget Settings', 'dable'),
+			null,
+			'dable-for-wordpress'
+		);
 		add_settings_field(
 			'display_widget',
 			__('Widget', 'dable'),
 			array( $this, 'print_widget_option' ),
 			'dable-for-wordpress',
-			'default-section'
+			'widget-section'
 		);
 	}
 
@@ -128,8 +161,15 @@ class DableAdmin {
 	 */
 	public function sanitize( $input ) {
 		$valid_keys = array(
+			// Default settings
 			'service_name' => 'string',
 			'service_name_mobile' => 'string',
+			'wrap_content' => 'bool',
+
+			// Open Graph settings
+			'print_og_tag' => 'bool',
+
+			// Widget settings
 			'widget_type' => 'string',
 			'widget_code_responsive_bottom' => 'string',
 			'widget_code_responsive_left' => 'string',
@@ -140,10 +180,6 @@ class DableAdmin {
 			'widget_code_mobile_bottom' => 'string',
 			'widget_code_mobile_left' => 'string',
 			'widget_code_mobile_right' => 'string',
-
-			// Should cast below values into boolean values.
-			'print_og_tag' => 'bool',
-			'wrap_content' => 'bool',
 			'display_widget_responsive_bottom' => 'bool',
 			'display_widget_responsive_left' => 'bool',
 			'display_widget_responsive_right' => 'bool',
@@ -174,25 +210,36 @@ class DableAdmin {
 	}
 
 	/**
-	 * Print section information
+	 * Print default section information
 	 */
-	public function print_section_info() {
+	public function print_default_section_info() {
 		echo __('Please enter the required default settings.', 'dable');
 	}
 
 	/**
 	 * Generate OpenGraph options
 	 */
-	public function print_og_option() {
-		$print_og_tag = $this->get_option( 'print_og_tag' ) ? ' checked' : '';
+	public function print_og_tag_option() {
+		$print_og_tag = $this->get_option( 'print_og_tag' );
 ?>
-		<input type="checkbox" id="print_og_tag" name="dable-settings[print_og_tag]" <?php echo esc_attr( $print_og_tag ); ?> value="true">
-		<label for="print_og_tag"><?php
-			echo wp_kses(
-				__('Create <a href="http://ogp.me/">Open Graph</a> tags. If you are using a plugin that already has the same functionality, uncheck it.', 'dable'),
-				array('a' => array('href' => array() ) )
-			);
-		?></label>
+		<p>
+			<input type="radio" id="print_og_tag_yes" name="dable-og-settings[print_og_tag]" <?php echo $print_og_tag ? 'checked' : ''; ?> value="true">
+			<label for="print_og_tag_yes"><?php
+				echo wp_kses(
+					__('Create <a href="http://ogp.me/">Open Graph</a> meta tags.', 'dable'),
+					array('a' => array('href' => array() ) )
+				);
+			?></label>
+		</p>
+		<p>
+			<input type="radio" id="print_og_tag_no" name="dable-og-settings[print_og_tag]" <?php echo $print_og_tag ? '' : 'checked'; ?> value="">
+			<label for="print_og_tag_no"><?php
+				echo wp_kses(
+					__('Do not make Open Graph meta tags. If you are using a plugin that already has the same functionality, uncheck it.', 'dable'),
+					array('a' => array('href' => array() ) )
+				);
+			?></label>
+		</p>
 <?php
 	}
 
@@ -220,7 +267,7 @@ class DableAdmin {
 		$service_mobile = $this->get_option( 'service_name_mobile', '' );
 ?>
 		<p class="dable-input-tag">
-			<label for="service_name" class="dable-input-tag__tag">Desktop</label>
+			<label for="service_name" class="dable-input-tag__tag"><?php esc_html_e( 'Desktop', 'dable' ); ?></label>
 			<input
 				type="text"
 				id="service_name"
@@ -229,7 +276,7 @@ class DableAdmin {
 				class="regular-text dable-input-tag__input">
 		</p>
 		<p class="dable-input-tag">
-			<label for="service_name_mobile" class="dable-input-tag__tag">Mobile</label>
+			<label for="service_name_mobile" class="dable-input-tag__tag"><?php esc_html_e( 'Mobile', 'dable' ); ?></label>
 			<input
 				type="text"
 				id="service_name_mobile"
@@ -237,7 +284,7 @@ class DableAdmin {
 				value="<?php echo esc_attr( $service_mobile ); ?>"
 				class="regular-text dable-input-tag__input">
 		</p>
-		<p><?php echo __('Service Name for Dable Script.', 'dable'); ?></p>
+		<p><?php esc_html_e('Service Name for Dable Script.', 'dable'); ?></p>
 <?php
 	}
 
@@ -248,7 +295,6 @@ class DableAdmin {
 	 * @param string $platform Platform type.
 	 */
 	protected function print_widget_code_field( $widget_type, $platform = '' ) {
-		$placeholder = __('Enter widget script.', 'dable');
 		$widget_pos	= array(
 			'bottom' => __('Bottom of article', 'dable'),
 			'left' => __('Left side of article', 'dable'),
@@ -262,7 +308,7 @@ class DableAdmin {
 				<input
 					type="checkbox"
 					id="display_widget_<?php echo esc_attr( $key ); ?>"
-					name="dable-settings[display_widget_<?php echo esc_attr( $key ); ?>]"
+					name="dable-widget-settings[display_widget_<?php echo esc_attr( $key ); ?>]"
 					<?php echo $this->get_option( 'display_widget_' . $key ) ? 'checked' : '' ?>
 					value="true">
 				<label for="display_widget_<?php echo esc_attr( $key ); ?>">
@@ -272,10 +318,11 @@ class DableAdmin {
 			</p>
 			<p>
 				<textarea
-					placeholder="<?php echo esc_attr( $placeholder ); ?>"
-					name="dable-settings[widget_code_<?php echo esc_attr( $key ); ?>]"
+					placeholder="<?php esc_attr_e( 'Enter widget script.', 'dable' ); ?>"
+					name="dable-widget-settings[widget_code_<?php echo esc_attr( $key ); ?>]"
 					class="large-text"
-					rows="4"><?php echo esc_html( $this->get_option( 'widget_code_' . $key ) ); ?></textarea>
+					rows="4"
+				><?php echo esc_html( $this->get_option( 'widget_code_' . $key ) ); ?></textarea>
 			</p>
 <?php
 		endforeach;
@@ -288,9 +335,9 @@ class DableAdmin {
 		$widget_type = $this->get_option( 'widget_type', 'responsive' );
 ?>
 		<p>
-			<input type="radio" id="widget_type_responsive" name="dable-settings[widget_type]" <?php echo 'responsive' === $widget_type ? 'checked' : '' ?> value="responsive">
+			<input type="radio" id="widget_type_responsive" name="dable-widget-settings[widget_type]" <?php echo 'responsive' === $widget_type ? 'checked' : '' ?> value="responsive">
 			<label for="widget_type_responsive"><?php echo __('Script for responsive web', 'dable'); ?></label>
-			<input type="radio" id="widget_type_platform" name="dable-settings[widget_type]" <?php echo 'platform' === $widget_type ? 'checked' : '' ?> value="platform">
+			<input type="radio" id="widget_type_platform" name="dable-widget-settings[widget_type]" <?php echo 'platform' === $widget_type ? 'checked' : '' ?> value="platform">
 			<label for="widget_type_platform"><?php echo __('Script for PC/Mobile version', 'dable'); ?></label>
 		</p>
 		<hr />
@@ -298,7 +345,7 @@ class DableAdmin {
 		<fieldset class="dable-widget-responsive <?php echo 'responsive' !== $widget_type ? 'hidden' : ''; ?>">
 		<?php $this->print_widget_code_field( 'responsive' ); ?>
 		</fieldset>
-		
+
 		<fieldset class="dable-widget-platform <?php echo 'platform' !== $widget_type ? 'hidden' : ''; ?>">
 		<?php $this->print_widget_code_field( 'platform', 'PC' ); ?>
 		<?php $this->print_widget_code_field( 'platform', 'Mobile' ); ?>
