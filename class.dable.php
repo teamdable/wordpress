@@ -43,8 +43,13 @@ class Dable
 		return $options;
 	}
 
+	public static function is_eligible_post_type() {
+		$post_types = get_option( 'dable-target-post-types', array( 'post' ) );
+		return is_singular( $post_types );
+	}
+
 	public function print_header() {
-		if ( ! is_singular( $this->options['target_post_types'] ) ) {
+		if ( ! Dable::is_eligible_post_type() ) {
 			return;
 		}
 
