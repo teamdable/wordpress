@@ -19,6 +19,7 @@ define( 'DABLE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 require_once DABLE_PLUGIN_DIR . 'lib/functions.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable.php';
+require_once DABLE_PLUGIN_DIR . 'class.dable-widget.php';
 
 new Dable();
 
@@ -26,4 +27,3 @@ if ( is_admin() ) {
 	require_once DABLE_PLUGIN_DIR . 'class.dable-admin.php';
 	new DableAdmin();
 }
-
