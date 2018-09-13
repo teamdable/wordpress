@@ -169,6 +169,10 @@ class Dable
 	}
 
 	public function add_content_wrapper( $content ) {
+		if ( is_feed() ) {
+			return $content;
+		}
+
 		if ( ! empty( $this->options['wrap_content'] ) ) {
 			$content = '<div itemprop="articleBody" class="dable-content-wrapper">' . $content . '</div>';
 		}
