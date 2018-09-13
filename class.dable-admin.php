@@ -42,7 +42,7 @@ class DableAdmin {
 			'dable-settings-group',
 			'dable-settings',
 			array(
-				'sanitize_callback' => array( $this, 'sanitize' )
+				'sanitize_callback' => array( $this, 'sanitize_default_settings' )
 			)
 		);
 		add_settings_section(
@@ -179,7 +179,7 @@ class DableAdmin {
 	 * @param  array $input input values.
 	 * @return array sanitize values to save.
 	 */
-	public function sanitize( $input ) {
+	public function sanitize( $input, $defaults = array() ) {
 		$valid_keys = array(
 			// Default settings
 			'service_name' => 'string',
@@ -212,8 +212,9 @@ class DableAdmin {
 			'display_widget_mobile_right' => 'bool',
 		);
 
-		$new_input = array();
+		$input = array_merge( $defaults, $input );
 
+		$new_input = array();
 		foreach ( $valid_keys as $key => $type ) {
 			if ( ! isset( $input[ $key ] ) ) {
 				continue;
@@ -228,6 +229,12 @@ class DableAdmin {
 		}
 
 		return $new_input;
+	}
+
+	public function sanitize_default_settings( $input ) {
+		return $this->sanitize( $input, array(
+			'wrap_content' => false,
+		) );
 	}
 
 	/**
@@ -367,8 +374,13 @@ class DableAdmin {
 	 * Print target post types option
 	 */
 	public function print_post_type_option() {
-		$post_types = get_option( 'dable-target-post-types', array( 'post' ) );
 		$registered_post_types = get_post_types( array('public'=>true), 'objects' );
+		$post_types = get_option( 'dable-target-post-types' );
+
+		if ( ! is_array( $post_types ) ) {
+			update_option( 'dable-target-post-types', array( 'post' ) );
+			$post_types = array( 'post' );
+		}
 
 		foreach ( $registered_post_types as $key => $type ) :
 ?>
