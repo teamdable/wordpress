@@ -1,4 +1,71 @@
+.wrap.dable h2 {
+	border-bottom: 1px solid #ccc;
+}
+.wrap.dable h3 {
+	font-size: 1.2em;
+}
+.wrap.dable button.toggle {
+	border: 0;
+	background: transparent;
+	padding: 0;
+	cursor: pointer;
+}
+.wrap.dable button.toggle.active {
+	color: #0073aa;
+}
+.wrap.dable .desc {
+	display: none;
+	margin: 0;
+	padding: .5em;
+}
+.wrap.dable label.toggle-slide input[type="radio"],
+.wrap.dable label.toggle-slide input[type="checkbox"] {
+	position: absolute;
+	visibility: hidden;
+	left: -9999px;
+}
+.wrap.dable label.toggle-slide span {
+	display: block;
+	position: relative;
+	line-height: 20px;
+	padding-left: 45px;
+}
+.wrap.dable label.toggle-slide span:before {
+	content: '';
+	position: absolute;
+	background: #ccc;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 40px;
+	border-radius: 9px;
+	vertical-align: middle;
+	transition: background-color .3s;
+}
+.wrap.dable label.toggle-slide input:checked + span:before {
+	background: #0073aa;
+}
+.wrap.dable label.toggle-slide span:after {
+	position: absolute;
+	content: '';
+	top: 3px;
+	left: 23px;
+	height: 14px;
+	width: 14px;
+	border-radius: 7px;
+	background: #fff;
+	transition: left .3s;
+}
+.wrap.dable label.toggle-slide input:checked + span:after {
+	content: '';
+	left: 3px;
+}
+.wrap.dable label.toggle-slide span {
+	vertical-align: middle;
+}
+
 .dable-input-tag {
+	display: block;
 	position: relative;
 }
 
@@ -20,4 +87,13 @@
 label[for*="dable_thumbnail_"] {
 	min-width: 10em;
 	vertical-align: baseline;
+}
+
+.wrap.dable .widget-types label,
+.wrap.dable .thumbnail-sizes label {
+	display: block;
+}
+.wrap.dable .post-types label {
+	display: block;
+	margin-bottom: 5px;
 }

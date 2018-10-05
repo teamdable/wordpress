@@ -11,8 +11,8 @@ class Dable
 		add_filter( 'the_content',  array( $this, 'add_content_wrapper' ) );
 		add_image_size(
 			'dable-og-thumbnail',
-			$this->options['thumbnail_width'],
-			$this->options['thumbnail_height']
+			$this->options['thumbnail_size'],
+			$this->options['thumbnail_size']
 		);
 	}
 
@@ -23,8 +23,7 @@ class Dable
 			'service_name' => '',
 			'service_name_mobile' => '',
 			'widget_type' => 'responsive',
-			'thumbnail_width' => 250,
-			'thumbnail_height' => 250
+			'thumbnail_size' => 200
 		);
 		$options = get_option( 'dable-settings', $defaults );
 
