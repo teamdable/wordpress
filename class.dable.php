@@ -19,7 +19,6 @@ class Dable
 	public static function get_options() {
 		$defaults = array(
 			'print_og_tag' => true,
-			'wrap_content' => true,
 			'service_name' => '',
 			'service_name_mobile' => '',
 			'widget_type' => 'responsive',

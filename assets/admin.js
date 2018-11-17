@@ -9,7 +9,7 @@ jQuery( function($){
 
 	$( '.wrap.dable button.toggle' ).on('click', function() {
 		var $this = $(this).toggleClass('active');
-		var $desc = $this.closest('section').find('>.desc');
+		var $desc = $this.closest('h2,h3').nextAll('p.desc').eq(0);
 
 		if ( $this.hasClass('active') ) {
 			$desc.slideDown(200);

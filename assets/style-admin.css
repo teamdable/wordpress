@@ -1,6 +1,18 @@
-.wrap.dable h2 {
-	border-bottom: 1px solid #ccc;
+.wrap.dable section {
+	background: #fff;
+	padding: 20px;
+	padding-top: 0;
+	margin-bottom: 15px;
+	border: 1px solid #eaeaea;
 }
+
+.wrap.dable h2 {
+	margin: 5px -20px 0 -20px;
+	padding-left: 20px;
+	border-bottom: 1px solid #ccc;
+	line-height: 3;
+}
+
 .wrap.dable h3 {
 	font-size: 1.2em;
 }
@@ -28,7 +40,7 @@
 	display: block;
 	position: relative;
 	line-height: 20px;
-	padding-left: 45px;
+	padding-left: 53px;
 }
 .wrap.dable label.toggle-slide span:before {
 	content: '';
@@ -37,9 +49,8 @@
 	top: 0;
 	left: 0;
 	height: 20px;
-	width: 40px;
+	width: 45px;
 	border-radius: 9px;
-	vertical-align: middle;
 	transition: background-color .3s;
 }
 .wrap.dable label.toggle-slide input:checked + span:before {
@@ -49,7 +60,7 @@
 	position: absolute;
 	content: '';
 	top: 3px;
-	left: 23px;
+	left: 29px;
 	height: 14px;
 	width: 14px;
 	border-radius: 7px;
@@ -60,10 +71,20 @@
 	content: '';
 	left: 3px;
 }
-.wrap.dable label.toggle-slide span {
-	vertical-align: middle;
+.wrap.dable label.toggle-slide span i:before {
+	position: absolute;
+	content: 'Off';
+	font-size: 5px;
+	font-style: normal;
+	font-weight: 500;
+	top: 0;
+	left: 6px;
+	color: #fff;
 }
-
+.wrap.dable label.toggle-slide input:checked + span i:before {
+	content: 'On';
+	left: 22px;
+}
 .dable-input-tag {
 	display: block;
 	position: relative;
@@ -89,7 +110,25 @@ label[for*="dable_thumbnail_"] {
 	vertical-align: baseline;
 }
 
+.wrap.dable .widget-types {
+	padding-bottom: 12px;
+	margin-bottom: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.wrap.dable .dable-widget-responsive,
+.wrap.dable .dable-widget-platform {
+	margin-left: 24px;
+}
+
+.wrap.dable .dable-widget-responsive label,
+.wrap.dable .dable-widget-platform label {
+	margin-left: -24px;
+	line-height: 2;
+}
+
 .wrap.dable .widget-types label,
+.wrap.dable .meta-tags label,
 .wrap.dable .thumbnail-sizes label {
 	display: block;
 }

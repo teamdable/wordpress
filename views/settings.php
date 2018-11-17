@@ -3,10 +3,11 @@
 	<form method="post" action="options.php">
 	<?php settings_fields( 'dable-settings-group' ); ?>
 
-	<h2><?php esc_html_e('Main Configuration', 'dable'); ?><small>(<?php esc_html_e('required'); ?>)</small></h2>
 	<section>
+		<h2><?php esc_html_e('Default Settings', 'dable'); ?></h2>
+		<p><?php esc_html_e('Please enter the required default settings'); ?></p>
 		<h3>
-			<?php esc_html_e('Log Collection Script', 'dable'); ?>
+			<?php esc_html_e('Service Name', 'dable'); ?>
 			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
 		</h3>
 		<p class="desc">
@@ -21,9 +22,9 @@
 				<label for="service_name_mobile" class="dable-input-tag__tag"><?php esc_html_e( 'Mobile' ); ?></label>
 				<input type="text" id="service_name_mobile" name="dable-settings[service_name_mobile]" class="regular-text dable-input-tag__input" value="<?php echo esc_attr( $this->get_option( 'service_name_mobile', '' ) ); ?>">
 			</span>
+			<span><?php esc_html_e('Service Name for Dable Script.'); ?></span>
 		</p>
-	</section>
-	<section>
+
 		<h3>
 			<?php esc_html_e('Content Wrapper Setting', 'dable'); ?>
 			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
@@ -37,39 +38,13 @@
 			?>
 		</p>
 		<p>
-			<label for="wrap_content" class="toggle-slide">
+			<label for="wrap_content">
 				<?php $wrap_content = $this->get_option( 'wrap_content' ); ?>
-				<input type="radio" name="dable-og-settings[wrap_content]" <?php checked( $wrap_content, false ); ?> value="">
-				<input type="radio" name="dable-og-settings[wrap_content]" <?php checked( $wrap_content, true ); ?> value="true">
-				<span><?php esc_html_e('Wrap content with <div itemprop="articleBody">. OFF if you do not need it.', 'dable'); ?></span>
+				<input type="checkbox" id="wrap_content" name="dable-og-settings[wrap_content]" <?php checked( $wrap_content, true ); ?> value="true">
+				<span><?php esc_html_e('Wrap content with <div itemprop="articleBody">. Uncheck if you do not need it.', 'dable'); ?></span>
 			</label>
 		</p>
-	</section>
 
-	<h2><?php esc_html_e('Additional Settings', 'dable'); ?><small>(<?php esc_html_e('required'); ?>)</small></h2>
-	<section>
-		<h3>
-			<?php esc_html_e('Open Graph', 'dable'); ?>
-			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
-		</h3>
-		<p class="desc">
-			<?php
-				printf(
-					esc_html('By turning this ON create %s meta tags. If you are using a plugin that already has the same functionality, please set it to OFF.', 'dable'),
-					'<a href="http://ogp.me/" target="_blank">' . esc_html( 'Open Graph', 'dable' ) . '</a>'
-				);
-			?>
-		</p>
-		<p>
-			<label for="print_og_tag" class="toggle-slide">
-				<?php $print_og_tag = $this->get_option( 'print_og_tag' ); ?>
-				<input type="radio" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, false ); ?> value="">
-				<input type="radio" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, true ); ?> value="true">
-				<span><?php esc_html_e('Create meta tags for dable service. OFF if you do not need it.', 'dable'); ?></span>
-			</label>
-		</p>
-	</section>
-	<section>
 		<h3>
 			<?php esc_html_e('Target Post Types', 'dable'); ?>
 			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
@@ -96,28 +71,52 @@
 					value="<?php echo esc_attr( $type->name ); ?>"
 					<?php echo in_array( $key, $post_types, true ) ? 'checked' : '' ?>
 				/>
-				<span><?php echo esc_html( $type->label ); ?></span>
+				<span><i></i><?php echo esc_html( $type->label ); ?></span>
 			</label>
 			<?php endforeach; ?>
 		</p>
 	</section>
+
 	<section>
+		<h2><?php esc_html_e('Open Graph', 'dable'); ?></h2>
 		<h3>
-			<?php esc_html_e('Thumbnail Resolution', 'dable'); ?>
+			<?php esc_html_e('Meta Tags', 'dable'); ?>
+			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
+		</h3>
+		<p class="desc">
+			<?php
+				printf(
+					esc_html('By turning this ON create %s meta tags. If you are using a plugin that already has the same functionality, please set it to OFF.', 'dable'),
+					'<a href="http://ogp.me/" target="_blank">' . esc_html( 'Open Graph', 'dable' ) . '</a>'
+				);
+			?>
+		</p>
+		<p class="meta-tags">
+			<?php $print_og_tag = $this->get_option( 'print_og_tag' ); ?>
+			<label for="print_og_tag_1">
+				<input type="radio" id="print_og_tag_1" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, false ); ?> value="">
+				<?php esc_html_e('Create Open Graph meta tags.', 'dable'); ?>
+			</label>
+			<label for="print_og_tag_2">
+				<input type="radio" id="print_og_tag_2" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, true ); ?> value="true">
+				<?php esc_html_e('Do not generate Open Graph meta tags. Select this option if you are using a plugin that already has the same functionality.', 'dable'); ?>
+			</label>
+		</p>
+		<h3>
+			<?php esc_html_e('Thumbnail Size', 'dable'); ?>
 			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
 		</h3>
 		<p class="desc">
 			<?php esc_html_e('A function for adjusting the size of thumbnail image in Dable widget.', 'dable'); ?>
 		</p>
 		<p class="thumbnail-sizes">
-			<?php $thumbnail_size = $this->get_option( 'thumbnail_size', 200 ); ?>
-			<label for="thumbnail_size_200">
-				<input type="radio" name="dable-og-settings[thumbnail_size]" id="thumbnail_size_200" <?php checked( $thumbnail_size, 200 ); ?> value="200">
-				200px
-			</label>
-			<label for="thumbnail_size_400">
-				<input type="radio" name="dable-og-settings[thumbnail_size]" id="thumbnail_size_400" <?php checked( $thumbnail_size, 400 ); ?> value="400">
-				400px
+			<?php
+				$thumbnail_size = intval( $this->get_option( 'thumbnail_size', 250 ) );
+				$thumbnail_size = $thumbnail_size > 500 ? 600 : 250;
+			?>
+			<label for="thumbnail_size_250">
+				<input type="radio" name="dable-og-settings[thumbnail_size]" id="thumbnail_size_250" <?php checked( $thumbnail_size, 250 ); ?> value="250">
+				250px
 			</label>
 			<label for="thumbnail_size_600">
 				<input type="radio" name="dable-og-settings[thumbnail_size]" id="thumbnail_size_600" <?php checked( $thumbnail_size, 600 ); ?> value="600">
@@ -126,20 +125,9 @@
 		</p>
 	</section>
 
-	<h2><?php esc_html_e('Widget Setting', 'dable'); ?></h2>
 	<section>
-		<h3>
-			<?php esc_html_e('Widget Script', 'dable'); ?>
-			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
-		</h3>
-		<p class="desc">
-			<?php
-				printf(
-					esc_html('Please check the widget design and code in the %s, then insert the widget script for each area.', 'dable'),
-					'<a href="https://admin.dable.io" target="_blank">' . esc_html( 'Dable dashboard', 'dable' ) . '</a>'
-				);
-			?>
-		</p>
+		<h2><?php esc_html_e('Widget Setting', 'dable'); ?></h2>
+		<h3><?php esc_html_e('Widget', 'dable'); ?></h3>
 		<p class="widget-types">
 			<?php $widget_type = $this->get_option( 'widget_type', 'responsive' ); ?>
 			<label for="widget_type_responsive">

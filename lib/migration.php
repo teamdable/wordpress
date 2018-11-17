@@ -45,13 +45,11 @@ function dable_migrate_from_2_to_3() {
 		$og_settings = get_option( 'dable-og-settings', array() );
 
 		if ( empty( $og_settings['thumbnail_size'] ) ) {
-			$size = 200;
+			$size = 250;
 			if ( isset( $og_settings['thumbnail_width'] ) ) {
 				$width = intval( $og_settings['thumbnail_width'] );
-				if ( $width >= 600 ) {
+				if ( $width > 500 ) {
 					$size = 600;
-				} elseif ( $width >= 300 ) {
-					$size = 400;
 				}
 			}
 			$og_settings['thumbnail_size'] = $size;
