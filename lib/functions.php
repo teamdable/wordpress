@@ -2,7 +2,7 @@
 
 // Load localized strings
 function dable_textdomain() {
-	load_plugin_textdomain( 'dable', false, DABLE_PLUGIN_DIR . 'languages' );
+	load_plugin_textdomain( 'dable', false, 'dable/languages' );
 }
 add_action( 'plugins_loaded', 'dable_textdomain' );
 
