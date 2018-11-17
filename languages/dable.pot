@@ -1,92 +1,201 @@
-# Translation of Plugins - Name: dable-for-wordpress - Development (trunk) in English (UK)
-# This file is distributed under the same license as the Plugins - Name: dable-for-wordpress - Development (trunk) package.
+# Copyright (C) 2018 Dable for WordPress
+# This file is distributed under the same license as the Dable for WordPress package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-12 14:48:55+0000\n"
+"Project-Id-Version: Dable for WordPress 3.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dable\n"
+"POT-Creation-Date: 2018-11-17 09:38:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: ko_KR\n"
-"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development (trunk)\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: class.dable.php:88
-msgid "End Dable Script / For inquiries, support@dable.io"
+#. #-#-#-#-#  dable.pot (Dable for WordPress 3.0.0)  #-#-#-#-#
+#. Author of the plugin/theme
+#: class.dable-widget.php:13
+msgid "Dable"
 msgstr ""
 
-#: class.dable.php:82
+#: class.dable-widget.php:15
+msgid "Displays a Dable banner."
+msgstr ""
+
+#: class.dable-widget.php:26
+msgid "Dable widget ID is not defined."
+msgstr ""
+
+#: class.dable-widget.php:32 class.dable.php:113
 msgid "Begin Dable Script / For inquiries, support@dable.io"
 msgstr ""
 
-#: class.dable-admin.php:290
-msgid "Script for PC/Mobile version"
+#: class.dable-widget.php:43 class.dable.php:119
+msgid "End Dable Script / For inquiries, support@dable.io"
 msgstr ""
 
-#: class.dable-admin.php:288
-msgid "Script for responsive web"
+#: class.dable-widget.php:57
+msgid "Dable widget title"
 msgstr ""
 
-#: class.dable-admin.php:252
-msgid "Right side of article"
+#: class.dable-widget.php:81
+msgid "Do not show title."
 msgstr ""
 
-#: class.dable-admin.php:252
-msgid "Left side of article"
+#: class.dable-widget.php:86
+msgid "Widget ID"
 msgstr ""
 
-#: class.dable-admin.php:252
-msgid "Bottom of article"
+#: class.dable-widget.php:97
+msgid "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</a>"
 msgstr ""
 
-#: class.dable-admin.php:251
-msgid "Enter widget script."
-msgstr ""
-
-#: class.dable-admin.php:208
-msgid "Wrap content with <code>&lt;div itemprop=\"articleBody\"&gt;</code>. Uncheck if you do not need it."
-msgstr ""
-
-#: class.dable-admin.php:192
-msgid "Create <a href=\"http://ogp.me/\">Open Graph</a> tags. If you are using a plugin that already has the same functionality, uncheck it."
-msgstr ""
-
-#: class.dable-admin.php:180
-msgid "Please enter the required default settings."
-msgstr ""
-
-#: class.dable-admin.php:75
-msgid "Widget"
-msgstr ""
-
-#: class.dable-admin.php:68
-msgid "Content Wrapper Setting"
-msgstr ""
-
-#: class.dable-admin.php:61
-msgid "Open Graph Tag Setting"
-msgstr ""
-
-#: class.dable-admin.php:54
-msgid "Service Name"
-msgstr ""
-
-#: class.dable-admin.php:48
+#: views/settings.php:7
 msgid "Default Settings"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://dable.io"
+#: views/settings.php:8
+msgid "Please enter the required default settings"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Dable"
+#: views/settings.php:10
+msgid "Service Name"
+msgstr ""
+
+#: views/settings.php:14
+msgid "For personalized content recommendation, the log collection script should be inserted in your site. By entering the service name provided via e-mail, the log collection script will be automatically inserted."
+msgstr ""
+
+#: views/settings.php:18
+msgid "Desktop"
+msgstr ""
+
+#: views/settings.php:22
+msgid "Mobile"
+msgstr ""
+
+#: views/settings.php:25
+msgid "Service Name for Dable Script."
+msgstr ""
+
+#: views/settings.php:29
+msgid "Content Wrapper Setting"
+msgstr ""
+
+#: views/settings.php:44
+msgid "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need it."
+msgstr ""
+
+#: views/settings.php:49
+msgid "Target Post Types"
+msgstr ""
+
+#: views/settings.php:53
+msgid "Please select the type of posts you would like to include in the widget. Set the \"Pages\" button to \"On\" if you want to expose notice or contact pages."
+msgstr ""
+
+#: views/settings.php:81
+msgid "Open Graph"
+msgstr ""
+
+#: views/settings.php:83
+msgid "Meta Tags"
+msgstr ""
+
+#: views/settings.php:98
+msgid "Create Open Graph meta tags."
+msgstr ""
+
+#: views/settings.php:102
+msgid ""
+"Do not generate Open Graph meta tags. Select this option if you are using a "
+"plugin that already has the same functionality."
+msgstr ""
+
+#: views/settings.php:106
+msgid "Thumbnail Size"
+msgstr ""
+
+#: views/settings.php:110
+msgid "A function for adjusting the size of thumbnail image in Dable widget."
+msgstr ""
+
+#: views/settings.php:129
+msgid "Widget Setting"
+msgstr ""
+
+#: views/settings.php:135
+msgid "Script for Responsive Web"
+msgstr ""
+
+#: views/settings.php:139
+msgid "Script for PC/Mobile Web"
+msgstr ""
+
+#: views/settings.php:152
+msgid "Bottom of article"
+msgstr ""
+
+#: views/settings.php:155 views/settings.php:211 views/settings.php:265
+msgid "This widget is exposed at the bottom of the by-line."
+msgstr ""
+
+#: views/settings.php:170
+msgid "Left side of article"
+msgstr ""
+
+#: views/settings.php:173 views/settings.php:229 views/settings.php:283
+msgid "This widget is exposed in the top left corner."
+msgstr ""
+
+#: views/settings.php:188
+msgid "Right side of article"
+msgstr ""
+
+#: views/settings.php:191 views/settings.php:247 views/settings.php:301
+msgid "This widget is exposed in the top right corner."
+msgstr ""
+
+#: views/settings.php:208
+msgid "PC Bottom of article"
+msgstr ""
+
+#: views/settings.php:211 views/settings.php:229 views/settings.php:247
+msgid "(PC site only)"
+msgstr ""
+
+#: views/settings.php:226
+msgid "PC Left side of article"
+msgstr ""
+
+#: views/settings.php:244
+msgid "PC Right side of article"
+msgstr ""
+
+#: views/settings.php:262
+msgid "Mobile Bottom of article"
+msgstr ""
+
+#: views/settings.php:265 views/settings.php:283 views/settings.php:301
+msgid "(Mobile site only)"
+msgstr ""
+
+#: views/settings.php:280
+msgid "Mobile Left side of article"
+msgstr ""
+
+#: views/settings.php:298
+msgid "Mobile Right side of article"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Dable for WordPress"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid "Adds meta tags for Dable and SEO."
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "Dable for WordPress"
+#. Author URI of the plugin/theme
+msgid "http://dable.io"
 msgstr ""

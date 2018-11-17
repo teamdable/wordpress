@@ -58,7 +58,7 @@ class DableWidget extends WP_Widget {
 		$widget_id = isset( $instance['widget_id'] ) ? $instance['widget_id'] : '';
 ?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'dable' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title' ); ?>:</label>
 			<input
 				type="text"
 				class="widefat"
@@ -83,7 +83,7 @@ class DableWidget extends WP_Widget {
 
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'widget_id' ) ); ?>"><?php esc_html_e( 'Widget ID:', 'dable' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'widget_id' ) ); ?>"><?php esc_html_e( 'Widget ID', 'dable' ); ?>:</label>
 			<input
 				type="text"
 				class="widefat"
@@ -92,11 +92,12 @@ class DableWidget extends WP_Widget {
 				value="<?php echo esc_attr( $widget_id ); ?>"
 			>
 			<span><?php
-				echo wp_kses(
-					__( 'If you are not sure about this, please contact <a href="mailto:support@dable.io">support@dable.io</a>', 'dable' ),
-					array(
-						'a' => array( 'href' => array() )
-					)
+				printf(
+					wp_kses(
+						__( 'If you are not sure about this, please contact <a href="mailto:%1$s">%1$s</a>', 'dable' ),
+						array( 'a' => array( 'href' => true ) )
+					),
+					'support@dable.io'
 				);
 			?></span>
 		</p>

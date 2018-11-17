@@ -5,7 +5,7 @@
 
 	<section>
 		<h2><?php esc_html_e('Default Settings', 'dable'); ?></h2>
-		<p><?php esc_html_e('Please enter the required default settings'); ?></p>
+		<p><?php esc_html_e('Please enter the required default settings', 'dable'); ?></p>
 		<h3>
 			<?php esc_html_e('Service Name', 'dable'); ?>
 			<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
@@ -22,7 +22,7 @@
 				<label for="service_name_mobile" class="dable-input-tag__tag"><?php esc_html_e( 'Mobile' ); ?></label>
 				<input type="text" id="service_name_mobile" name="dable-settings[service_name_mobile]" class="regular-text dable-input-tag__input" value="<?php echo esc_attr( $this->get_option( 'service_name_mobile', '' ) ); ?>">
 			</span>
-			<span><?php esc_html_e('Service Name for Dable Script.'); ?></span>
+			<span><?php esc_html_e('Service Name for Dable Script.', 'dable'); ?></span>
 		</p>
 
 		<h3>

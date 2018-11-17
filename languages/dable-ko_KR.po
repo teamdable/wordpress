@@ -1,95 +1,202 @@
-# Translation of Plugins - Name: dable-for-wordpress - Development (trunk) in English (UK)
-# This file is distributed under the same license as the Plugins - Name: dable-for-wordpress - Development (trunk) package.
+# Copyright (C) 2018 Dable for WordPress
+# This file is distributed under the same license as the Dable for WordPress package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-12 14:48:55+0000\n"
+"Project-Id-Version: Dable for WordPress 3.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dable\n"
+"POT-Creation-Date: 2018-11-17 09:38:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: ko_KR\n"
-"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development (trunk)\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: class.dable.php:88
-msgid "End Dable Script / For inquiries, support@dable.io"
-msgstr "Dable 스크립트 종료 / 문의 support@dable.io"
-
-#: class.dable.php:82
-msgid "Begin Dable Script / For inquiries, support@dable.io"
-msgstr "Dable 스크립트 시작 / 문의 support@dable.io"
-
-#: class.dable-admin.php:290
-msgid "Script for PC/Mobile version"
-msgstr "PC/Mobile 개별 스크립트 사용"
-
-#: class.dable-admin.php:288
-msgid "Script for responsive web"
-msgstr "반응형 스크립트 사용"
-
-#: class.dable-admin.php:252
-msgid "Right side of article"
-msgstr "본문 우측"
-
-#: class.dable-admin.php:252
-msgid "Left side of article"
-msgstr "본문 좌측"
-
-#: class.dable-admin.php:252
-msgid "Bottom of article"
-msgstr "본문 하단"
-
-#: class.dable-admin.php:251
-msgid "Enter widget script."
-msgstr "위젯 코드를 입력하세요."
-
-#: class.dable-admin.php:208
-msgid "Wrap content with <code>&lt;div itemprop=\"articleBody\"&gt;</code>. Uncheck if you do not need it."
-msgstr "컨텐트를 <code>&lt;div itemprop=\"articleBody\"&gt;</code>로 감쌉니다. 필요하지 않으면 체크를 해제하세요."
-
-#: class.dable-admin.php:192
-msgid "Create <a href=\"http://ogp.me/\">Open Graph</a> tags. If you are using a plugin that already has the same functionality, uncheck it."
-msgstr "<a href=\"http://ogp.me/\">Open Graph</a> 태그를 생성합니다. 이미 같은 기능을 하는 플러그인을 사용하고 있다면 체크를 해제하세요."
-
-#: class.dable-admin.php:180
-msgid "Please enter the required default settings."
-msgstr "필요한 기본 설정을 입력하세요."
-
-#: class.dable-admin.php:75
-msgid "Widget"
-msgstr "위젯"
-
-#: class.dable-admin.php:68
-msgid "Content Wrapper Setting"
-msgstr "컨텐트 래퍼 출력"
-
-#: class.dable-admin.php:61
-msgid "Open Graph Tag Setting"
-msgstr "Open Graph 태그 출력"
-
-#: class.dable-admin.php:54
-msgid "Service Name"
-msgstr "서비스 이름"
-
-#: class.dable-admin.php:48
-msgid "Default Settings"
-msgstr "기본 설정"
-
-#. Author URI of the plugin/theme
-msgid "https://dable.io"
-msgstr ""
-
+#. #-#-#-#-#  dable.pot (Dable for WordPress 3.0.0)  #-#-#-#-#
 #. Author of the plugin/theme
+#: class.dable-widget.php:13
 msgid "Dable"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "Adds meta tags for Dable and SEO."
-msgstr "Dable과 검색엔진 최적화를 위한 메타 태그를 추가합니다."
+#: class.dable-widget.php:15
+msgid "Displays a Dable banner."
+msgstr "Dable 배너를 표시합니다"
+
+#: class.dable-widget.php:26
+msgid "Dable widget ID is not defined."
+msgstr "Dable 위젯 아이디가 정의되지 않았습니다."
+
+#: class.dable-widget.php:32 class.dable.php:114
+msgid "Begin Dable Script / For inquiries, support@dable.io"
+msgstr "Dable 스크립트 시작 / 문의 support@dable.io"
+
+#: class.dable-widget.php:43 class.dable.php:120
+msgid "End Dable Script / For inquiries, support@dable.io"
+msgstr "Dable 스크립트 종료 / 문의 support@dable.io"
+
+#: class.dable-widget.php:57
+msgid "Dable widget title"
+msgstr "Dable 위젯 타이틀"
+
+#: class.dable-widget.php:81
+msgid "Do not show title."
+msgstr "타이틀 표시 안함"
+
+#: class.dable-widget.php:86
+msgid "Widget ID"
+msgstr "위젯 아이디"
+
+#: class.dable-widget.php:97
+msgid "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</a>"
+msgstr "Dable 위젯에 대해 잘 모르겠다면 <a href=\"%1$s\">%1$s</a>로 문의하세요."
+
+#: views/settings.php:7
+msgid "Default Settings"
+msgstr "기본 설정"
+
+#: views/settings.php:8
+msgid "Please enter the required default settings"
+msgstr "필수 기본 설정을 입력하세요"
+
+#: views/settings.php:10
+msgid "Service Name"
+msgstr "서비스명"
+
+#: views/settings.php:14
+msgid "For personalized content recommendation, the log collection script should be inserted in your site. By entering the service name provided via e-mail, the log collection script will be automatically inserted."
+msgstr "개인화 콘텐츠 추천을 위해 사이트에 로그수집 스크립트를 삽입해주시기 바랍니다. 이메일을 통해 보내드리는 서비스 네임을 입력해주시면, 로그 수집 스크립트가 자동적으로 사이트에 삽입됩니다."
+
+#: views/settings.php:18
+msgid "Desktop"
+msgstr "데스크톱"
+
+#: views/settings.php:22
+msgid "Mobile"
+msgstr "모바일"
+
+#: views/settings.php:25
+msgid "Service Name for Dable Script."
+msgstr "Dable 스크립트를 위한 서비스명."
+
+#: views/settings.php:29
+msgid "Content Wrapper Setting"
+msgstr "콘텐츠 래퍼 세팅"
+
+#: views/settings.php:44
+msgid "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need it."
+msgstr "<div itemprop=\"articleBody\"> 태그가 콘텐츠를 감쌉니다. 필요하지 않다면 체크를 해제하세요."
+
+#: views/settings.php:49
+msgid "Target Post Types"
+msgstr "타겟 포스트 타입"
+
+#: views/settings.php:53
+msgid "Please select the type of posts you would like to include in the widget. Set the \"Pages\" button to \"On\" if you want to expose notice or contact pages."
+msgstr ""
+
+#: views/settings.php:81
+msgid "Open Graph"
+msgstr "오픈 그래프"
+
+#: views/settings.php:83
+msgid "Meta Tags"
+msgstr "메타 태그"
+
+#: views/settings.php:98
+msgid "Create Open Graph meta tags."
+msgstr ""
+
+#: views/settings.php:102
+msgid ""
+"Do not generate Open Graph meta tags. Select this option if you are using a "
+"plugin that already has the same functionality."
+msgstr ""
+
+#: views/settings.php:106
+msgid "Thumbnail Size"
+msgstr "썸네일 크기"
+
+#: views/settings.php:110
+msgid "A function for adjusting the size of thumbnail image in Dable widget."
+msgstr "데이블 위젯에 노출될 썸네일의 해상도를 조정할 수 있는 기능입니다."
+
+#: views/settings.php:129
+msgid "Widget Setting"
+msgstr "위젯 설정"
+
+#: views/settings.php:135
+msgid "Script for Responsive Web"
+msgstr "반응형 웹사이트를 위한 스크립트"
+
+#: views/settings.php:139
+msgid "Script for PC/Mobile Web"
+msgstr "PC/Mobile 웹사이트를 위한 스크립트"
+
+#: views/settings.php:152
+msgid "Bottom of article"
+msgstr "본문 하단"
+
+#: views/settings.php:155 views/settings.php:211 views/settings.php:265
+msgid "This widget is exposed at the bottom of the by-line."
+msgstr "PC 페이지의 바이라인 하단에 위젯이 노출됩니다."
+
+#: views/settings.php:170
+msgid "Left side of article"
+msgstr "본문 좌측"
+
+#: views/settings.php:173 views/settings.php:229 views/settings.php:283
+msgid "This widget is exposed in the top left corner."
+msgstr "좌측 상단에 위젯이 노출됩니다."
+
+#: views/settings.php:188
+msgid "Right side of article"
+msgstr "본문 우측"
+
+#: views/settings.php:191 views/settings.php:247 views/settings.php:301
+msgid "This widget is exposed in the top right corner."
+msgstr "우측 상단에 위젯이 노출됩니다."
+
+#: views/settings.php:208
+msgid "PC Bottom of article"
+msgstr "PC 페이지 본문 하단"
+
+#: views/settings.php:211 views/settings.php:229 views/settings.php:247
+msgid "(PC site only)"
+msgstr "(PC 페이지)"
+
+#: views/settings.php:226
+msgid "PC Left side of article"
+msgstr "PC 페이지 본문 좌측"
+
+#: views/settings.php:244
+msgid "PC Right side of article"
+msgstr "PC 페이지 본문 우측"
+
+#: views/settings.php:262
+msgid "Mobile Bottom of article"
+msgstr "모바일 페이지 본문 하단 "
+
+#: views/settings.php:265 views/settings.php:283 views/settings.php:301
+msgid "(Mobile site only)"
+msgstr "(모바일 페이지)"
+
+#: views/settings.php:280
+msgid "Mobile Left side of article"
+msgstr "모바일 페이지 본문 좌측 "
+
+#: views/settings.php:298
+msgid "Mobile Right side of article"
+msgstr "모바일 페이지 본문 우측"
 
 #. Plugin Name of the plugin/theme
 msgid "Dable for WordPress"
 msgstr ""
 
-msgid "Service Name for Dable Script."
-msgstr "Dable 스크립트에 설정할 서비스 이름입니다."
+#. Description of the plugin/theme
+msgid "Adds meta tags for Dable and SEO."
+msgstr "Dable 서비스와 SEO를 위해 메타 태그를 추가합니다."
+
+#. Author URI of the plugin/theme
+msgid "http://dable.io"
+msgstr ""
+
