@@ -22,12 +22,13 @@ class DableAdmin {
 	 * Insert a link to the Dable admin page into the Settings section
 	 */
 	public function add_plugin_page() {
-		add_options_page(
-			'Dable for WordPress',
-			'Dable for WordPress',
+		add_menu_page(
+			'Dable',
+			'Dable',
 			'manage_options',
 			DableAdmin::PAGE_SLUG,
-			array( $this, 'create_admin_page' )
+			array( $this, 'create_admin_page' ),
+			'none'
 		);
 	}
 
@@ -74,7 +75,7 @@ class DableAdmin {
 	 * @return array
 	 */
 	public function add_plugin_action( $actions ) {
-		$actions['settings'] = '<a href="options-general.php?page=dable-for-wordpress">' . esc_html( 'Settings' ) . '</a>';
+		$actions['settings'] = '<a href="admin.php?page=dable-for-wordpress">' . esc_html__( 'Settings' ) . '</a>';
 		return $actions;
 	}
 
