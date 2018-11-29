@@ -13,7 +13,7 @@ class DableAdmin {
 	 * Constructor
 	 */
 	public function __construct() {
-		add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', array( $this, 'add_plugin_page' ) );
+		add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 		add_action( 'admin_init', array( $this, 'page_init' ) );
 		add_filter( 'plugin_action_links_' . DABLE_PLUGIN_BASENAME, array( $this, 'add_plugin_action' ) );
 	}
@@ -38,6 +38,7 @@ class DableAdmin {
 	public function page_init() {
 		if ( isset( $_GET['page'] ) && DableAdmin::PAGE_SLUG === $_GET['page'] ) {
 			wp_enqueue_style( 'dable-for-wordpress', DABLE_PLUGIN_URL . 'assets/style-admin.css', array(), DABLE_PLUGIN_VERSION );
+			wp_enqueue_script( 'clamp-js', DABLE_PLUGIN_URL . 'assets/clamp.min.js', '0.5.1', true );
 			wp_enqueue_script( 'dable-for-wordpress', DABLE_PLUGIN_URL . 'assets/admin.js', array( 'jquery' ), DABLE_PLUGIN_VERSION, true );
 		}
 
