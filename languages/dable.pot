@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Dable for WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dable for WordPress 3.0.0\n"
+"Project-Id-Version: Dable for WordPress 3.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dable\n"
-"POT-Creation-Date: 2018-11-17 09:38:56+00:00\n"
+"POT-Creation-Date: 2018-12-02 14:28:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#. #-#-#-#-#  dable.pot (Dable for WordPress 3.0.0)  #-#-#-#-#
+#: class.dable-admin.php:81
+msgid "Settings"
+msgstr ""
+
+#. #-#-#-#-#  dable.pot (Dable for WordPress 3.0.2)  #-#-#-#-#
 #. Author of the plugin/theme
 #: class.dable-widget.php:13
 msgid "Dable"
@@ -38,6 +42,10 @@ msgstr ""
 msgid "Dable widget title"
 msgstr ""
 
+#: class.dable-widget.php:61
+msgid "Title"
+msgstr ""
+
 #: class.dable-widget.php:81
 msgid "Do not show title."
 msgstr ""
@@ -50,141 +58,151 @@ msgstr ""
 msgid "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</a>"
 msgstr ""
 
-#: views/settings.php:7
+#: views/settings.php:9
 msgid "Default Settings"
 msgstr ""
 
-#: views/settings.php:8
+#: views/settings.php:10
 msgid "Please enter the required default settings"
 msgstr ""
 
-#: views/settings.php:10
+#: views/settings.php:12
 msgid "Service Name"
 msgstr ""
 
-#: views/settings.php:14
-msgid "For personalized content recommendation, the log collection script should be inserted in your site. By entering the service name provided via e-mail, the log collection script will be automatically inserted."
+#: views/settings.php:16
+msgid ""
+"For personalized content recommendation, the log collection script should be "
+"inserted in your site. By entering the service name provided via e-mail, the "
+"log collection script will be automatically inserted."
 msgstr ""
 
-#: views/settings.php:18
+#: views/settings.php:20
 msgid "Desktop"
 msgstr ""
 
-#: views/settings.php:22
+#: views/settings.php:24
 msgid "Mobile"
 msgstr ""
 
-#: views/settings.php:25
+#: views/settings.php:27
 msgid "Service Name for Dable Script."
 msgstr ""
 
-#: views/settings.php:29
+#: views/settings.php:31
 msgid "Content Wrapper Setting"
 msgstr ""
 
-#: views/settings.php:44
-msgid "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need it."
+#: views/settings.php:46
+msgid ""
+"Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need it."
 msgstr ""
 
-#: views/settings.php:49
+#: views/settings.php:51
 msgid "Target Post Types"
 msgstr ""
 
-#: views/settings.php:53
-msgid "Please select the type of posts you would like to include in the widget. Set the \"Pages\" button to \"On\" if you want to expose notice or contact pages."
-msgstr ""
-
-#: views/settings.php:81
-msgid "Open Graph"
+#: views/settings.php:55
+msgid ""
+"Please select the type of posts you would like to include in the widget. Set "
+"the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
 msgstr ""
 
 #: views/settings.php:83
+msgid "Open Graph"
+msgstr ""
+
+#: views/settings.php:85
 msgid "Meta Tags"
 msgstr ""
 
-#: views/settings.php:98
+#: views/settings.php:100
 msgid "Create Open Graph meta tags."
 msgstr ""
 
-#: views/settings.php:102
+#: views/settings.php:104
 msgid ""
 "Do not generate Open Graph meta tags. Select this option if you are using a "
 "plugin that already has the same functionality."
 msgstr ""
 
-#: views/settings.php:106
+#: views/settings.php:108
 msgid "Thumbnail Size"
 msgstr ""
 
-#: views/settings.php:110
+#: views/settings.php:112
 msgid "A function for adjusting the size of thumbnail image in Dable widget."
 msgstr ""
 
-#: views/settings.php:129
+#: views/settings.php:131
 msgid "Widget Setting"
 msgstr ""
 
-#: views/settings.php:135
+#: views/settings.php:132
+msgid "Widget"
+msgstr ""
+
+#: views/settings.php:137
 msgid "Script for Responsive Web"
 msgstr ""
 
-#: views/settings.php:139
+#: views/settings.php:141
 msgid "Script for PC/Mobile Web"
 msgstr ""
 
-#: views/settings.php:152
+#: views/settings.php:154
 msgid "Bottom of article"
 msgstr ""
 
-#: views/settings.php:155 views/settings.php:211 views/settings.php:265
+#: views/settings.php:157 views/settings.php:213 views/settings.php:267
 msgid "This widget is exposed at the bottom of the by-line."
 msgstr ""
 
-#: views/settings.php:170
+#: views/settings.php:172
 msgid "Left side of article"
 msgstr ""
 
-#: views/settings.php:173 views/settings.php:229 views/settings.php:283
+#: views/settings.php:175 views/settings.php:231 views/settings.php:285
 msgid "This widget is exposed in the top left corner."
 msgstr ""
 
-#: views/settings.php:188
+#: views/settings.php:190
 msgid "Right side of article"
 msgstr ""
 
-#: views/settings.php:191 views/settings.php:247 views/settings.php:301
+#: views/settings.php:193 views/settings.php:249 views/settings.php:303
 msgid "This widget is exposed in the top right corner."
 msgstr ""
 
-#: views/settings.php:208
+#: views/settings.php:210
 msgid "PC Bottom of article"
 msgstr ""
 
-#: views/settings.php:211 views/settings.php:229 views/settings.php:247
+#: views/settings.php:213 views/settings.php:231 views/settings.php:249
 msgid "(PC site only)"
 msgstr ""
 
-#: views/settings.php:226
+#: views/settings.php:228
 msgid "PC Left side of article"
 msgstr ""
 
-#: views/settings.php:244
+#: views/settings.php:246
 msgid "PC Right side of article"
 msgstr ""
 
-#: views/settings.php:262
+#: views/settings.php:264
 msgid "Mobile Bottom of article"
 msgstr ""
 
-#: views/settings.php:265 views/settings.php:283 views/settings.php:301
+#: views/settings.php:267 views/settings.php:285 views/settings.php:303
 msgid "(Mobile site only)"
 msgstr ""
 
-#: views/settings.php:280
+#: views/settings.php:282
 msgid "Mobile Left side of article"
 msgstr ""
 
-#: views/settings.php:298
+#: views/settings.php:300
 msgid "Mobile Right side of article"
 msgstr ""
 
