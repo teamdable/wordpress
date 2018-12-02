@@ -314,9 +314,9 @@
 
 		<ul class="news">
 			<li class="news__entry template">
-				<h3 class="news__title">Subject 1</h3>
-				<div class="news__thumbnail"></div>
-				<p class="news__content">Lorem ipsum</p>
+				<h3 class="news__title"><a href="#">Subject 1</a></h3>
+				<div class="news__thumbnail"><a href="#"></a></div>
+				<p class="news__content"><a href="#" class="more-link">Lorem ipsum</a></p>
 			</li>
 		</ul>
 	</div>
