@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Dable for WordPress
-Description: Adds meta tags for Dable and SEO.
+Description: Add Dable widgets and meta tags.
 Author: Dable
 Text Domain: dable
 Version: 3.0.2
