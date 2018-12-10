@@ -2,102 +2,218 @@
 # This file is distributed under the same license as the Plugins - Name: dable-for-wordpress - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-19 14:27+0900\n"
+"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development "
+"(trunk)\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
+"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
+"PO-Revision-Date: 2018-12-10 23:06+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.2\n"
-"Language: zh_CN\n"
-"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development (trunk)\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"X-Generator: Poedit 2.2\n"
 
-#: class.dable.php:88
-msgid "End Dable Script / For inquiries, support@dable.io"
-msgstr "Dable 代码结束 / 若有疑问请洽 support@dable.io"
-
-#: class.dable.php:82
-msgid "Begin Dable Script / For inquiries, support@dable.io"
-msgstr "Dable 代码开始 / 若有疑问请洽 support@dable.io"
-
-#: class.dable-admin.php:294
-msgid "Script for PC/Mobile version"
-msgstr "PC/行动版用代码"
-
-#: class.dable-admin.php:292
-msgid "Script for responsive web"
-msgstr "自适应网站用代码"
-
-#: class.dable-admin.php:255
-msgid "Right side of article"
-msgstr "文章右侧"
-
-#: class.dable-admin.php:254
-msgid "Left side of article"
-msgstr "文章左侧"
-
-#: class.dable-admin.php:253
-msgid "Bottom of article"
-msgstr "文章下方"
-
-#: class.dable-admin.php:251
-msgid "Enter widget script."
-msgstr "请输入 widget 代码"
-
-#: class.dable-admin.php:240
-msgid "Service Name for Dable Script."
-msgstr "网站名"
-
-#: class.dable-admin.php:208
-msgid "Wrap content with <code>&lt;div itemprop=\"articleBody\"&gt;</code>. Uncheck if you do not need it."
-msgstr "请以<code>&lt;div itemprop=\"articleBody\"&gt;</code>包围文章。若无需要，请取消选中。"
-
-#: class.dable-admin.php:192
-msgid "Create <a href=\"http://ogp.me/\">Open Graph</a> tags. If you are using a plugin that already has the same functionality, uncheck it."
-msgstr "新增<a href=\"http://ogp.me/\">Open Graph</a>代码。若已使用拥有相同功能的插件，请取消选中。"
-
-#: class.dable-admin.php:180
-msgid "Please enter the required default settings."
-msgstr "请输入默认设置。"
-
-#: class.dable-admin.php:75
-msgid "Widget"
-msgstr "Widget"
-
-#: class.dable-admin.php:68
-msgid "Content Wrapper Setting"
-msgstr "Content Wrapper 设定"
-
-#: class.dable-admin.php:61
-msgid "Open Graph Tag Setting"
-msgstr "Open Graph 标签设定"
-
-#: class.dable-admin.php:54
-msgid "Service Name"
-msgstr "网站名"
-
-#: class.dable-admin.php:48
-msgid "Default Settings"
-msgstr "\t默认设置"
-
-#. Author URI of the plugin/theme
-msgid "https://dable.io"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Dable"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Adds meta tags for Dable and SEO."
-msgstr "新增 Dable 和 SEO 用 meta 标签"
-
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
 msgid "Dable for WordPress"
 msgstr ""
 
-#: class.dable-admin.php:89
-msgid "Settings"
-msgstr "设定"
+#. Description of the plugin
+msgid "Add Dable widgets and meta tags."
+msgstr "添加Dable小部件和元標記。"
+
+#. Author of the plugin
+#: class.dable-widget.php:13
+msgid "Dable"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://dable.io"
+msgstr "http://dable.io/cn"
+
+#: views/settings.php:9
+msgid "Default Settings"
+msgstr "默認設置"
+
+#: views/settings.php:10
+msgid "Please enter the required default settings"
+msgstr "請輸入所需的默認設置"
+
+#: views/settings.php:12
+msgid "Service Name"
+msgstr "网站名"
+
+#: views/settings.php:16
+msgid ""
+"For personalized content recommendation, the log collection script should be "
+"inserted in your site. By entering the service name provided via e-mail, the "
+"log collection script will be automatically inserted."
+msgstr ""
+"對於個性化內容推薦，應在您的站點中插入日誌收集腳本。 通過輸入通過電子郵件提供"
+"的服務名稱，將自動插入日誌收集腳本。"
+
+#: views/settings.php:27
+msgid "Service Name for Dable Script."
+msgstr "Dable腳本的服務名稱。"
+
+#: views/settings.php:31
+msgid "Content Wrapper Setting"
+msgstr "內容包裝設置"
+
+#: views/settings.php:46
+msgid ""
+"Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
+"it."
+msgstr "用<div itemprop =“articleBody”>換行內容。 如果您不需要，請取消選中。"
+
+#: views/settings.php:51
+msgid "Target Post Types"
+msgstr "目標職位類型"
+
+#: views/settings.php:55
+msgid ""
+"Please select the type of posts you would like to include in the widget. Set "
+"the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
+msgstr ""
+"請選擇您要包含在窗口小部件中的帖子類型。 如果要公開通知或聯繫頁面，請將“頁"
+"面”按鈕設置為“開”。"
+
+#: views/settings.php:83
+msgid "Open Graph"
+msgstr "Open Graph"
+
+#: views/settings.php:85
+msgid "Meta Tags"
+msgstr ""
+
+#: views/settings.php:100
+msgid "Create Open Graph meta tags."
+msgstr "創建Open Graph元標記。"
+
+#: views/settings.php:104
+msgid ""
+"Do not generate Open Graph meta tags. Select this option if you are using a "
+"plugin that already has the same functionality."
+msgstr ""
+"不要生成Open Graph元標記。 如果您使用的插件已具有相同的功能，請選擇此選項。"
+
+#: views/settings.php:108
+msgid "Thumbnail Size"
+msgstr "縮略圖大小"
+
+#: views/settings.php:112
+msgid "A function for adjusting the size of thumbnail image in Dable widget."
+msgstr "用於在Dable小部件中調整縮略圖圖像大小的功能。"
+
+#: views/settings.php:131
+msgid "Widget Setting"
+msgstr "小工具設置"
+
+#: views/settings.php:132
+msgid "Widget"
+msgstr "Widget"
+
+#: views/settings.php:137
+msgid "Script for Responsive Web"
+msgstr "響應式Web腳本"
+
+#: views/settings.php:141
+msgid "Script for PC/Mobile Web"
+msgstr "PC /移動網絡腳本"
+
+#: views/settings.php:154
+msgid "Bottom of article"
+msgstr "文章的底部"
+
+#: views/settings.php:157 views/settings.php:213 views/settings.php:267
+msgid "This widget is exposed at the bottom of the by-line."
+msgstr "此窗口小部件顯示在作者的底部。"
+
+#: views/settings.php:172
+msgid "Left side of article"
+msgstr "文章的左側"
+
+#: views/settings.php:175 views/settings.php:231 views/settings.php:285
+msgid "This widget is exposed in the top left corner."
+msgstr "此小部件顯示在左上角。"
+
+#: views/settings.php:190
+msgid "Right side of article"
+msgstr "文章的右側"
+
+#: views/settings.php:193 views/settings.php:249 views/settings.php:303
+msgid "This widget is exposed in the top right corner."
+msgstr "此小部件顯示在右上角。"
+
+#: views/settings.php:210
+msgid "PC Bottom of article"
+msgstr "PC文章底部"
+
+#: views/settings.php:213 views/settings.php:231 views/settings.php:249
+msgid "(PC site only)"
+msgstr "（僅限PC站點）"
+
+#: views/settings.php:228
+msgid "PC Left side of article"
+msgstr "PC文章的左側"
+
+#: views/settings.php:246
+msgid "PC Right side of article"
+msgstr "PC右側的文章"
+
+#: views/settings.php:264
+msgid "Mobile Bottom of article"
+msgstr "移動底部的文章"
+
+#: views/settings.php:267 views/settings.php:285 views/settings.php:303
+msgid "(Mobile site only)"
+msgstr "（僅限移動網站）"
+
+#: views/settings.php:282
+msgid "Mobile Left side of article"
+msgstr "移動文章的左側"
+
+#: views/settings.php:300
+msgid "Mobile Right side of article"
+msgstr "手機右側的文章"
+
+#: class.dable-widget.php:15
+msgid "Displays a Dable banner."
+msgstr "顯示Dable橫幅。"
+
+#: class.dable-widget.php:26
+msgid "Dable widget ID is not defined."
+msgstr "未定義Dable小部件ID。"
+
+#: class.dable-widget.php:32
+msgid "Begin Dable Script / For inquiries, support@dable.io"
+msgstr "Dable 代码开始 / 若有疑问请洽 support@dable.io"
+
+#: class.dable-widget.php:43
+msgid "End Dable Script / For inquiries, support@dable.io"
+msgstr "Dable 代码结束 / 若有疑问请洽 support@dable.io"
+
+#: class.dable-widget.php:57
+msgid "Dable widget title"
+msgstr "Dable小部件標題"
+
+#: class.dable-widget.php:86
+msgid "Widget ID"
+msgstr ""
+
+#: class.dable-widget.php:97
+msgid ""
+"If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
+"a>"
+msgstr "如果您對此不確定，請聯繫<a href=“mailto:%1$s”>％1$s</a>"
+
+#~ msgid "Enter widget script."
+#~ msgstr "请输入 widget 代码"
+
+#~ msgid "Adds meta tags for Dable and SEO."
+#~ msgstr "新增 Dable 和 SEO 用 meta 标签"
+
+#~ msgid "Settings"
+#~ msgstr "设定"

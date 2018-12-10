@@ -1,51 +1,49 @@
-# Translation of Plugins - Name: dable-for-wordpress - Development (trunk) in Japanese
-# This file is distributed under the same license as the Plugins - Name: dable-for-wordpress - Development (trunk) package.
+# Copyright (C) 2018 Dable
+# This file is distributed under the same license as the Dable for WordPress plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development "
-"(trunk)\n"
+"Project-Id-Version: Dable for WordPress 3.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
-"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
-"PO-Revision-Date: 2018-12-10 22:43+0900\n"
-"Last-Translator: \n"
 "Language-Team: \n"
-"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
+"PO-Revision-Date: 2018-12-10 23:01+0900\n"
 "X-Generator: Poedit 2.2\n"
+"X-Domain: dable\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: id_ID\n"
 
 #. Plugin Name of the plugin
 msgid "Dable for WordPress"
-msgstr "Dable for WordPress"
+msgstr ""
 
 #. Description of the plugin
 msgid "Add Dable widgets and meta tags."
-msgstr "Dableウィジェットとメタタグを追加します."
+msgstr "Tambahkan widget Dable dan meta tag."
 
 #. Author of the plugin
 #: class.dable-widget.php:13
 msgid "Dable"
-msgstr "Dable"
+msgstr ""
 
 #. Author URI of the plugin
-#, fuzzy
-#| msgid "https://dable.io"
 msgid "http://dable.io"
-msgstr "https://dable.io/ja"
+msgstr "http://dable.io/id"
 
 #: views/settings.php:9
 msgid "Default Settings"
-msgstr "基本設定"
+msgstr "Konfigurasi Utama (Wajib)"
 
 #: views/settings.php:10
 msgid "Please enter the required default settings"
-msgstr "必要な初期設定を入力してください"
+msgstr "Mohon isi pengaturan default yang diperlukan"
 
 #: views/settings.php:12
 msgid "Service Name"
-msgstr "サイト名"
+msgstr ""
 
 #: views/settings.php:16
 msgid ""
@@ -53,37 +51,38 @@ msgid ""
 "inserted in your site. By entering the service name provided via e-mail, the "
 "log collection script will be automatically inserted."
 msgstr ""
-"パーソナライズ記事のレコメンドを利用するため、ログ収集コードをサイトに挿入す"
-"る必要がございます。メールでお知らせしたサイト名を該当欄に入力すると、ログ収"
-"集コードが自動的に挿入されます。"
+"Untuk rekomendasi konten yang dipersonalisasi, skrip pengumpulan log harus "
+"dimasukkan di situs Anda. Dengan memasukkan nama servis yang disediakan "
+"melalui e-mail, skrip pengumpulan log akan secara otomatis dimasukkan."
 
 #: views/settings.php:27
 msgid "Service Name for Dable Script."
-msgstr "Dableスクリプト用サービス名."
+msgstr "Nama Layanan untuk Skrip Dable."
 
 #: views/settings.php:31
 msgid "Content Wrapper Setting"
-msgstr "コンテンツラッパー設定"
+msgstr "Pengaturan Pembungkus Konten"
 
 #: views/settings.php:46
 msgid ""
 "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
 "it."
 msgstr ""
-"コンテンツを <div itemprop = “articleBody”> タグでラップします。必要ない場合"
-"はOFFにしてください。"
+"Bungkus konten dengan <div itemprop = “articleBody”>. Set ke OFF jika Anda "
+"tidak membutuhkannya."
 
 #: views/settings.php:51
 msgid "Target Post Types"
-msgstr "投稿種類"
+msgstr "Jenis Posting Target"
 
 #: views/settings.php:55
 msgid ""
 "Please select the type of posts you would like to include in the widget. Set "
 "the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
 msgstr ""
-"レコメンドに表示させる投稿種類を選択してください。お知らせやお問い合わせペー"
-"ジもレコメンドに入れる場合は「固定ページ」にチェックを入れてください。"
+"Silakan pilih jenis posting yang ingin Anda sertakan dalam widget. Set "
+"tombol “Halaman” menjadi “AKTIF” jika Anda ingin memaparkan pemberitahuan "
+"atau halaman kontak."
 
 #: views/settings.php:83
 msgid "Open Graph"
@@ -95,135 +94,122 @@ msgstr ""
 
 #: views/settings.php:100
 msgid "Create Open Graph meta tags."
-msgstr "Dableサービスを利用するためのメタタグを生成します。"
+msgstr "Buat meta tag untuk layanan dable."
 
 #: views/settings.php:104
 msgid ""
 "Do not generate Open Graph meta tags. Select this option if you are using a "
 "plugin that already has the same functionality."
-msgstr "必要ない場合はOFFにしてください。"
+msgstr "Set ke OFF jika Anda tidak membutuhkannya."
 
 #: views/settings.php:108
 msgid "Thumbnail Size"
-msgstr "サムネイル解像度"
+msgstr "Resolusi Gambar Kecil"
 
 #: views/settings.php:112
 msgid "A function for adjusting the size of thumbnail image in Dable widget."
-msgstr "Dableレコメンド内のサムネイルサイズを調整する機能です。"
+msgstr "Fungsi untuk menyesuaikan ukuran gambar thumbnail di widget Dable."
 
 #: views/settings.php:131
 msgid "Widget Setting"
-msgstr "ウィジェット設定"
+msgstr "Pengaturan Widget"
 
 #: views/settings.php:132
 msgid "Widget"
-msgstr "ウィジェットコード"
+msgstr "Skrip Widget"
 
 #: views/settings.php:137
-#, fuzzy
-#| msgid "Script for responsive web"
 msgid "Script for Responsive Web"
-msgstr "レスポンシブ用コード"
+msgstr "Skrip untuk Web Responsif"
 
 #: views/settings.php:141
-#, fuzzy
-#| msgid "Script for PC/Mobile version"
 msgid "Script for PC/Mobile Web"
-msgstr "PC / モバイル版コード"
+msgstr "Skrip untuk situs PC / Mobile"
 
 #: views/settings.php:154
 msgid "Bottom of article"
-msgstr "記事下"
+msgstr "Bawah artikel"
 
 #: views/settings.php:157 views/settings.php:213 views/settings.php:267
 msgid "This widget is exposed at the bottom of the by-line."
-msgstr "Widget顯示於文章末端."
+msgstr "Widget ditampilkan di bagian bawah baris-awal."
 
 #: views/settings.php:172
 msgid "Left side of article"
-msgstr "本文の左側"
+msgstr "Sisi kiri artikel"
 
 #: views/settings.php:175 views/settings.php:231 views/settings.php:285
 msgid "This widget is exposed in the top left corner."
-msgstr "レコメンドが記事左上に表示されます。"
+msgstr "Widget ditampilkan di sudut kiri atas."
 
 #: views/settings.php:190
 msgid "Right side of article"
-msgstr "本文の右側"
+msgstr "Sisi kanan artikel"
 
 #: views/settings.php:193 views/settings.php:249 views/settings.php:303
 msgid "This widget is exposed in the top right corner."
-msgstr "レコメンドが記事右上に表示されます。"
+msgstr "Widget ditampilkan di sudut kanan atas."
 
 #: views/settings.php:210
 msgid "PC Bottom of article"
-msgstr "PC記事下"
+msgstr "PC bagian bawah artikel"
 
 #: views/settings.php:213 views/settings.php:231 views/settings.php:249
 msgid "(PC site only)"
-msgstr "（PCのみ）"
+msgstr "(Hanya situs PC)"
 
 #: views/settings.php:228
 msgid "PC Left side of article"
-msgstr "PC記事の左"
+msgstr "PC sisi kiri artikel"
 
 #: views/settings.php:246
 msgid "PC Right side of article"
-msgstr "PC記事の右"
+msgstr "PC sisi kanan artikel"
 
 #: views/settings.php:264
 msgid "Mobile Bottom of article"
-msgstr "モバイル記事下"
+msgstr "Bagian bawah Mobile"
 
 #: views/settings.php:267 views/settings.php:285 views/settings.php:303
 msgid "(Mobile site only)"
-msgstr "（モバイルのみ）"
+msgstr "(Khusus situs Mobile)"
 
 #: views/settings.php:282
 msgid "Mobile Left side of article"
-msgstr "モバイル記事の左"
+msgstr "Mobile sisi kiri artikel"
 
 #: views/settings.php:300
 msgid "Mobile Right side of article"
-msgstr "モバイル記事の右"
+msgstr "Mobile sisi kanan artikel"
 
 #: class.dable-widget.php:15
 msgid "Displays a Dable banner."
-msgstr "Dableバナーを表示します。"
+msgstr "Menampilkan spanduk Dable."
 
 #: class.dable-widget.php:26
 msgid "Dable widget ID is not defined."
-msgstr "DableウィジェットIDが定義されていません."
+msgstr "ID widget Dable tidak didefinisikan."
 
 #: class.dable-widget.php:32
 msgid "Begin Dable Script / For inquiries, support@dable.io"
-msgstr "Dable コード開始 / お問い合わせは support@dable.io へ"
+msgstr "Mulai Script Dable / Untuk pertanyaan, support@dable.io"
 
 #: class.dable-widget.php:43
 msgid "End Dable Script / For inquiries, support@dable.io"
-msgstr "Dable コード終了 / お問い合わせは support@dable.io へ"
+msgstr "Akhiri Script Dable / Untuk pertanyaan, support@dable.io"
 
 #: class.dable-widget.php:57
 msgid "Dable widget title"
-msgstr "Dableウィジェットのタイトル"
+msgstr "Judul widget Dable"
 
 #: class.dable-widget.php:86
 msgid "Widget ID"
-msgstr "ウィジェットID"
+msgstr "ID Widget"
 
 #: class.dable-widget.php:97
 msgid ""
 "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
 "a>"
 msgstr ""
-"これについて不明な点がある場合は、<a href=“mailto:%1$s”>％1$s</a>にお問い合わ"
-"せください"
-
-#~ msgid "Enter widget script."
-#~ msgstr "ウィジェットコードを入力してください"
-
-#~ msgid "Adds meta tags for Dable and SEO."
-#~ msgstr "Dable と SEO 用タグを追加"
-
-#~ msgid "Settings"
-#~ msgstr "設定"
+"Jika Anda tidak yakin tentang hal ini, silakan hubungi <a href=“mailto:%1$s”>"
+"%1$s</a>"
