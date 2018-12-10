@@ -3,34 +3,197 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Dable for WordPress 3.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/dable\n"
-"POT-Creation-Date: 2018-11-17 09:38:56+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
+"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
+"PO-Revision-Date: 2018-12-10 22:31+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 2.2\n"
 
-#. #-#-#-#-#  dable.pot (Dable for WordPress 3.0.0)  #-#-#-#-#
-#. Author of the plugin/theme
+#. Plugin Name of the plugin
+msgid "Dable for WordPress"
+msgstr ""
+
+#. Description of the plugin
+msgid "Add Dable widgets and meta tags."
+msgstr "데이블 위젯과 필수 메타태그를 삽입합니다."
+
+#. Author of the plugin
 #: class.dable-widget.php:13
 msgid "Dable"
 msgstr ""
 
+#. Author URI of the plugin
+msgid "http://dable.io"
+msgstr ""
+
+#: views/settings.php:9
+msgid "Default Settings"
+msgstr "기본 설정(필수)"
+
+#: views/settings.php:10
+msgid "Please enter the required default settings"
+msgstr "필수 기본 설정을 완료해주세요"
+
+#: views/settings.php:12
+msgid "Service Name"
+msgstr "데이블 서비스명"
+
+#: views/settings.php:16
+msgid ""
+"For personalized content recommendation, the log collection script should be "
+"inserted in your site. By entering the service name provided via e-mail, the "
+"log collection script will be automatically inserted."
+msgstr ""
+"개인화 콘텐츠 추천을 위해 사이트에 로그수집 스크립트를 삽입해주시기 바랍니"
+"다. 이메일을 통해 보내드리는 서비스 네임을 입력해주시면, 로그 수집 스크립트"
+"가 자동적으로 사이트에 삽입됩니다."
+
+#: views/settings.php:27
+msgid "Service Name for Dable Script."
+msgstr ""
+"서비스 네임을 입력하시면 사이트 방문자의 행동 패턴을 수집하기 위한 스크립트"
+"에 반영됩니다."
+
+#: views/settings.php:31
+msgid "Content Wrapper Setting"
+msgstr ""
+
+#: views/settings.php:46
+msgid ""
+"Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
+"it."
+msgstr ""
+"이 기능을 켜시면 <div itemprop=“articleBody”> 태그가 콘텐츠 본문을 자동적으"
+"로 감쌉니다. 개인화 콘텐츠 추천 서비스를 이용하신다면 이 설정을 켜주세요."
+
+#: views/settings.php:51
+msgid "Target Post Types"
+msgstr ""
+
+#: views/settings.php:55
+msgid ""
+"Please select the type of posts you would like to include in the widget. Set "
+"the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
+msgstr ""
+"위젯 내에 포함시킬 포스트의 유형을 선택해주세요. 만약 공지 혹은 컨택 페이지"
+"를 추천 위젯에 포함시키려 하신다면 “Pages” 설정을 켜주세요."
+
+#: views/settings.php:83
+msgid "Open Graph"
+msgstr ""
+
+#: views/settings.php:85
+msgid "Meta Tags"
+msgstr ""
+
+#: views/settings.php:100
+msgid "Create Open Graph meta tags."
+msgstr "데이블 서비스를 위한 메타 태그를 생성합니다."
+
+#: views/settings.php:104
+msgid ""
+"Do not generate Open Graph meta tags. Select this option if you are using a "
+"plugin that already has the same functionality."
+msgstr "필요하지 않다면 이 설정을 꺼주세요."
+
+#: views/settings.php:108
+msgid "Thumbnail Size"
+msgstr "썸네일 크기"
+
+#: views/settings.php:112
+msgid "A function for adjusting the size of thumbnail image in Dable widget."
+msgstr "데이블 위젯에 노출될 썸네일의 해상도를 조정할 수 있는 기능입니다."
+
+#: views/settings.php:131
+msgid "Widget Setting"
+msgstr "위젯 설정"
+
+#: views/settings.php:132
+msgid "Widget"
+msgstr "위젯 스크립트"
+
+#: views/settings.php:137
+msgid "Script for Responsive Web"
+msgstr "반응형 웹사이트를 위한 스크립트"
+
+#: views/settings.php:141
+msgid "Script for PC/Mobile Web"
+msgstr "PC/Mobile 웹사이트를 위한 스크립트"
+
+#: views/settings.php:154
+msgid "Bottom of article"
+msgstr "본문 하단"
+
+#: views/settings.php:157 views/settings.php:213 views/settings.php:267
+msgid "This widget is exposed at the bottom of the by-line."
+msgstr "PC 페이지의 바이라인 하단에 위젯이 노출됩니다."
+
+#: views/settings.php:172
+msgid "Left side of article"
+msgstr "본문 좌측"
+
+#: views/settings.php:175 views/settings.php:231 views/settings.php:285
+msgid "This widget is exposed in the top left corner."
+msgstr "좌측 상단에 위젯이 노출됩니다."
+
+#: views/settings.php:190
+msgid "Right side of article"
+msgstr "본문 우측"
+
+#: views/settings.php:193 views/settings.php:249 views/settings.php:303
+msgid "This widget is exposed in the top right corner."
+msgstr "우측 상단에 위젯이 노출됩니다."
+
+#: views/settings.php:210
+msgid "PC Bottom of article"
+msgstr "PC 페이지 본문 하단"
+
+#: views/settings.php:213 views/settings.php:231 views/settings.php:249
+msgid "(PC site only)"
+msgstr "(PC 페이지)"
+
+#: views/settings.php:228
+msgid "PC Left side of article"
+msgstr "PC 페이지 본문 좌측"
+
+#: views/settings.php:246
+msgid "PC Right side of article"
+msgstr "PC 페이지 본문 우측"
+
+#: views/settings.php:264
+msgid "Mobile Bottom of article"
+msgstr "모바일 페이지 본문 하단"
+
+#: views/settings.php:267 views/settings.php:285 views/settings.php:303
+msgid "(Mobile site only)"
+msgstr "(모바일 페이지)"
+
+#: views/settings.php:282
+msgid "Mobile Left side of article"
+msgstr "모바일 페이지 본문 좌측"
+
+#: views/settings.php:300
+msgid "Mobile Right side of article"
+msgstr "모바일 페이지 본문 우측"
+
 #: class.dable-widget.php:15
 msgid "Displays a Dable banner."
-msgstr "Dable 배너를 표시합니다"
+msgstr "Dable 배너를 표시합니다."
 
 #: class.dable-widget.php:26
 msgid "Dable widget ID is not defined."
 msgstr "Dable 위젯 아이디가 정의되지 않았습니다."
 
-#: class.dable-widget.php:32 class.dable.php:114
+#: class.dable-widget.php:32
 msgid "Begin Dable Script / For inquiries, support@dable.io"
 msgstr "Dable 스크립트 시작 / 문의 support@dable.io"
 
-#: class.dable-widget.php:43 class.dable.php:120
+#: class.dable-widget.php:43
 msgid "End Dable Script / For inquiries, support@dable.io"
 msgstr "Dable 스크립트 종료 / 문의 support@dable.io"
 
@@ -38,165 +201,25 @@ msgstr "Dable 스크립트 종료 / 문의 support@dable.io"
 msgid "Dable widget title"
 msgstr "Dable 위젯 타이틀"
 
-#: class.dable-widget.php:81
-msgid "Do not show title."
-msgstr "타이틀 표시 안함"
-
 #: class.dable-widget.php:86
 msgid "Widget ID"
 msgstr "위젯 아이디"
 
 #: class.dable-widget.php:97
-msgid "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</a>"
-msgstr "Dable 위젯에 대해 잘 모르겠다면 <a href=\"%1$s\">%1$s</a>로 문의하세요."
-
-#: views/settings.php:7
-msgid "Default Settings"
-msgstr "기본 설정"
-
-#: views/settings.php:8
-msgid "Please enter the required default settings"
-msgstr "필수 기본 설정을 입력하세요"
-
-#: views/settings.php:10
-msgid "Service Name"
-msgstr "서비스명"
-
-#: views/settings.php:14
-msgid "For personalized content recommendation, the log collection script should be inserted in your site. By entering the service name provided via e-mail, the log collection script will be automatically inserted."
-msgstr "개인화 콘텐츠 추천을 위해 사이트에 로그수집 스크립트를 삽입해주시기 바랍니다. 이메일을 통해 보내드리는 서비스 네임을 입력해주시면, 로그 수집 스크립트가 자동적으로 사이트에 삽입됩니다."
-
-#: views/settings.php:18
-msgid "Desktop"
-msgstr "데스크톱"
-
-#: views/settings.php:22
-msgid "Mobile"
-msgstr "모바일"
-
-#: views/settings.php:25
-msgid "Service Name for Dable Script."
-msgstr "Dable 스크립트를 위한 서비스명."
-
-#: views/settings.php:29
-msgid "Content Wrapper Setting"
-msgstr "콘텐츠 래퍼 세팅"
-
-#: views/settings.php:44
-msgid "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need it."
-msgstr "<div itemprop=\"articleBody\"> 태그가 콘텐츠를 감쌉니다. 필요하지 않다면 체크를 해제하세요."
-
-#: views/settings.php:49
-msgid "Target Post Types"
-msgstr "타겟 포스트 타입"
-
-#: views/settings.php:53
-msgid "Please select the type of posts you would like to include in the widget. Set the \"Pages\" button to \"On\" if you want to expose notice or contact pages."
-msgstr ""
-
-#: views/settings.php:81
-msgid "Open Graph"
-msgstr "오픈 그래프"
-
-#: views/settings.php:83
-msgid "Meta Tags"
-msgstr "메타 태그"
-
-#: views/settings.php:98
-msgid "Create Open Graph meta tags."
-msgstr ""
-
-#: views/settings.php:102
 msgid ""
-"Do not generate Open Graph meta tags. Select this option if you are using a "
-"plugin that already has the same functionality."
+"If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
+"a>"
 msgstr ""
+"Dable 위젯에 대해 궁금한 점이 있다면 <a href=\"%1$s\">%1$s</a>로 문의하세요"
 
-#: views/settings.php:106
-msgid "Thumbnail Size"
-msgstr "썸네일 크기"
+#~ msgid "Do not show title."
+#~ msgstr "타이틀 표시 안함"
 
-#: views/settings.php:110
-msgid "A function for adjusting the size of thumbnail image in Dable widget."
-msgstr "데이블 위젯에 노출될 썸네일의 해상도를 조정할 수 있는 기능입니다."
+#~ msgid "Desktop"
+#~ msgstr "데스크톱"
 
-#: views/settings.php:129
-msgid "Widget Setting"
-msgstr "위젯 설정"
+#~ msgid "Mobile"
+#~ msgstr "모바일"
 
-#: views/settings.php:135
-msgid "Script for Responsive Web"
-msgstr "반응형 웹사이트를 위한 스크립트"
-
-#: views/settings.php:139
-msgid "Script for PC/Mobile Web"
-msgstr "PC/Mobile 웹사이트를 위한 스크립트"
-
-#: views/settings.php:152
-msgid "Bottom of article"
-msgstr "본문 하단"
-
-#: views/settings.php:155 views/settings.php:211 views/settings.php:265
-msgid "This widget is exposed at the bottom of the by-line."
-msgstr "PC 페이지의 바이라인 하단에 위젯이 노출됩니다."
-
-#: views/settings.php:170
-msgid "Left side of article"
-msgstr "본문 좌측"
-
-#: views/settings.php:173 views/settings.php:229 views/settings.php:283
-msgid "This widget is exposed in the top left corner."
-msgstr "좌측 상단에 위젯이 노출됩니다."
-
-#: views/settings.php:188
-msgid "Right side of article"
-msgstr "본문 우측"
-
-#: views/settings.php:191 views/settings.php:247 views/settings.php:301
-msgid "This widget is exposed in the top right corner."
-msgstr "우측 상단에 위젯이 노출됩니다."
-
-#: views/settings.php:208
-msgid "PC Bottom of article"
-msgstr "PC 페이지 본문 하단"
-
-#: views/settings.php:211 views/settings.php:229 views/settings.php:247
-msgid "(PC site only)"
-msgstr "(PC 페이지)"
-
-#: views/settings.php:226
-msgid "PC Left side of article"
-msgstr "PC 페이지 본문 좌측"
-
-#: views/settings.php:244
-msgid "PC Right side of article"
-msgstr "PC 페이지 본문 우측"
-
-#: views/settings.php:262
-msgid "Mobile Bottom of article"
-msgstr "모바일 페이지 본문 하단 "
-
-#: views/settings.php:265 views/settings.php:283 views/settings.php:301
-msgid "(Mobile site only)"
-msgstr "(모바일 페이지)"
-
-#: views/settings.php:280
-msgid "Mobile Left side of article"
-msgstr "모바일 페이지 본문 좌측 "
-
-#: views/settings.php:298
-msgid "Mobile Right side of article"
-msgstr "모바일 페이지 본문 우측"
-
-#. Plugin Name of the plugin/theme
-msgid "Dable for WordPress"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Adds meta tags for Dable and SEO."
-msgstr "Dable 서비스와 SEO를 위해 메타 태그를 추가합니다."
-
-#. Author URI of the plugin/theme
-msgid "http://dable.io"
-msgstr ""
-
+#~ msgid "Adds meta tags for Dable and SEO."
+#~ msgstr "Dable 서비스와 SEO를 위해 메타 태그를 추가합니다."
