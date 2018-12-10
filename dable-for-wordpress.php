@@ -17,7 +17,6 @@ define( 'DABLE_PLUGIN_VERSION', '3.0.2' );
 define( 'DABLE_PLUGIN_BASENAME', plugin_basename(__FILE__) );
 define( 'DABLE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define( 'DABLE_PLUGIN_URL', plugin_dir_url(__FILE__));
-define( 'DABLE_SECRET_KEY', 'SYAJYEKIPANIGULPSSERPDROWELBAD' );
 
 require_once DABLE_PLUGIN_DIR . 'lib/functions.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable.php';

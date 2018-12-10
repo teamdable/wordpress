@@ -31,16 +31,11 @@ class DableAPI {
 		$site_url = get_bloginfo('url');
 		$lang = get_bloginfo('language');
 		$count = $request['count'];
-		$timestamp = strtotime( gmdate( 'Y-m-d H:i:s' ) );
-		$access_key = base64_encode( hash('sha256', DABLE_SECRET_KEY . '_wordpressplugin' ) . '_' . $timestamp );
 
 		$res = wp_remote_get(
 			sprintf( '%s?blog=%s&lang=%s&count=%d', $api_endpoint, urlencode( $site_url ), $lang, $count ),
 			array(
 				'httpversion' => '1.1',
-				'headers' => array(
-					'X-DABLE-ACCESS-KEY' => $access_key
-				),
 			)
 		);
 
