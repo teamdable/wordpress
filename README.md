@@ -12,3 +12,7 @@
 * Open Graph 메타 태그 생성.
 * 컨텐트를 `<div itemprop="articleBody">`로 래핑.
 
+## 배포
+
+* 위키를 참고해 주세요 
+* https://teamdable.atlassian.net/wiki/spaces/DAB/pages/586088486/Wordpress
