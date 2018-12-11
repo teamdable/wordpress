@@ -14,5 +14,4 @@
 
 ## 배포
 
-* 위키를 참고해 주세요 
-* https://teamdable.atlassian.net/wiki/spaces/DAB/pages/586088486/Wordpress
+* 데이블러일 경우 팀 위키의 Frontend>배포>wordpress 항목을 참고해 주세요 
