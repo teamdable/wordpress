@@ -34,7 +34,7 @@
 			<p class="desc">
 				<?php
 					printf(
-						esc_html('If you turn this ON, the %s tag will automatically wrap the content. Please set it to ON if you want to use personalized content recommendation service.', 'dable'),
+						esc_html__('If you turn this ON, the %s tag will automatically wrap the content. Please set it to ON if you want to use personalized content recommendation service.', 'dable'),
 						'<code>' . esc_html('<div itemprop = "articleBody">') . '</code>'
 					);
 				?>
@@ -80,7 +80,7 @@
 		</section>
 
 		<section>
-			<h2><?php esc_html_e('Open Graph', 'dable'); ?></h2>
+			<h2>Open Graph</h2>
 			<h3>
 				<?php esc_html_e('Meta Tags', 'dable'); ?>
 				<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
@@ -88,8 +88,8 @@
 			<p class="desc">
 				<?php
 					printf(
-						esc_html('By turning this ON create %s meta tags. If you are using a plugin that already has the same functionality, please set it to OFF.', 'dable'),
-						'<a href="http://ogp.me/" target="_blank">' . esc_html( 'Open Graph', 'dable' ) . '</a>'
+						esc_html__('By turning this ON create %s meta tags. If you are using a plugin that already has the same functionality, please set it to OFF.', 'dable'),
+						'<a href="http://ogp.me/" target="_blank">Open Graph</a>'
 					);
 				?>
 			</p>
