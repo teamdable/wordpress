@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dable for WordPress 3.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
-"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
-"PO-Revision-Date: 2018-12-10 22:31+0900\n"
+"POT-Creation-Date: 2018-12-13T07:59:40+00:00\n"
+"PO-Revision-Date: 2018-12-13 17:35+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ko_KR\n"
@@ -63,17 +63,25 @@ msgstr ""
 msgid "Content Wrapper Setting"
 msgstr ""
 
+#: views/settings.php:37
+msgid ""
+"If you turn this ON, the %s tag will automatically wrap the content. Please "
+"set it to ON if you want to use personalized content recommendation service."
+msgstr ""
+"이 기능을 켜시면 %s 태그가 콘텐츠 본문을 자동으로 감쌉니다. 개인화 콘텐츠 추"
+"천 서비스를 이용하신다면 이 설정을 켜주세요."
+
 #: views/settings.php:46
 msgid ""
 "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
 "it."
 msgstr ""
-"이 기능을 켜시면 <div itemprop=“articleBody”> 태그가 콘텐츠 본문을 자동적으"
-"로 감쌉니다. 개인화 콘텐츠 추천 서비스를 이용하신다면 이 설정을 켜주세요."
+"<div itemprop=“articleBody”> 태그가 콘텐츠를 감쌉니다. 필요하지 않다면 이 설"
+"정을 꺼주세요."
 
 #: views/settings.php:51
 msgid "Target Post Types"
-msgstr ""
+msgstr "Target Post Types"
 
 #: views/settings.php:55
 msgid ""
@@ -83,13 +91,17 @@ msgstr ""
 "위젯 내에 포함시킬 포스트의 유형을 선택해주세요. 만약 공지 혹은 컨택 페이지"
 "를 추천 위젯에 포함시키려 하신다면 “Pages” 설정을 켜주세요."
 
-#: views/settings.php:83
-msgid "Open Graph"
-msgstr ""
-
 #: views/settings.php:85
 msgid "Meta Tags"
 msgstr ""
+
+#: views/settings.php:91
+msgid ""
+"By turning this ON create %s meta tags. If you are using a plugin that "
+"already has the same functionality, please set it to OFF."
+msgstr ""
+"데이블 서비스에 필요한 %s 를 생성합니다. 같은 기능의 다른 플러그인을 사용할 "
+"경우 필요하지 않으니 이 설정을 꺼주세요."
 
 #: views/settings.php:100
 msgid "Create Open Graph meta tags."

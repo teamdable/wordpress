@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - Name: dable-for-wordpress - Development "
 "(trunk)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
-"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
-"PO-Revision-Date: 2018-12-10 23:06+0900\n"
+"POT-Creation-Date: 2018-12-13T07:59:40+00:00\n"
+"PO-Revision-Date: 2018-12-13 17:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. Description of the plugin
 msgid "Add Dable widgets and meta tags."
-msgstr "添加Dable小部件和元標記。"
+msgstr "添加Dable小部件和元标记."
 
 #. Author of the plugin
 #: class.dable-widget.php:13
@@ -35,11 +35,11 @@ msgstr "http://dable.io/cn"
 
 #: views/settings.php:9
 msgid "Default Settings"
-msgstr "默認設置"
+msgstr "主要配置(必填)"
 
 #: views/settings.php:10
 msgid "Please enter the required default settings"
-msgstr "請輸入所需的默認設置"
+msgstr "请输入必填默认设定"
 
 #: views/settings.php:12
 msgid "Service Name"
@@ -51,141 +51,153 @@ msgid ""
 "inserted in your site. By entering the service name provided via e-mail, the "
 "log collection script will be automatically inserted."
 msgstr ""
-"對於個性化內容推薦，應在您的站點中插入日誌收集腳本。 通過輸入通過電子郵件提供"
-"的服務名稱，將自動插入日誌收集腳本。"
+"Log collection script应置于您的站内以达到个人化内容推荐成效.请填入您经由"
+"email收到的网站名称 (service_name)，log collection script将会自动置入."
 
 #: views/settings.php:27
 msgid "Service Name for Dable Script."
-msgstr "Dable腳本的服務名稱。"
+msgstr "Dable程式码专用网站名."
 
 #: views/settings.php:31
 msgid "Content Wrapper Setting"
-msgstr "內容包裝設置"
+msgstr "Content Wrapper 设定"
+
+#: views/settings.php:37
+msgid ""
+"If you turn this ON, the %s tag will automatically wrap the content. Please "
+"set it to ON if you want to use personalized content recommendation service."
+msgstr ""
+"若开启此设定, %s 将自动套用于所有内容.若您希望使用个人化内容推荐, 请务必启用"
+"此设定."
 
 #: views/settings.php:46
 msgid ""
 "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
 "it."
-msgstr "用<div itemprop =“articleBody”>換行內容。 如果您不需要，請取消選中。"
+msgstr ""
+"<div itemprop = “articleBody”>将自动套用于全站内容.若您不需要此功能，请将其"
+"关闭."
 
 #: views/settings.php:51
 msgid "Target Post Types"
-msgstr "目標職位類型"
+msgstr "文章类型"
 
 #: views/settings.php:55
 msgid ""
 "Please select the type of posts you would like to include in the widget. Set "
 "the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
 msgstr ""
-"請選擇您要包含在窗口小部件中的帖子類型。 如果要公開通知或聯繫頁面，請將“頁"
-"面”按鈕設置為“開”。"
-
-#: views/settings.php:83
-msgid "Open Graph"
-msgstr "Open Graph"
+"请选择您希望出现在widget内的文章类型，如果您希望显示注意事项或联络资讯页面，"
+"请开启”页面”选项."
 
 #: views/settings.php:85
 msgid "Meta Tags"
 msgstr ""
 
+#: views/settings.php:91
+msgid ""
+"By turning this ON create %s meta tags. If you are using a plugin that "
+"already has the same functionality, please set it to OFF."
+msgstr ""
+"启用此功能以产生%s meta tags，如果您已使用相同功能的plugin，请将其关闭."
+
 #: views/settings.php:100
 msgid "Create Open Graph meta tags."
-msgstr "創建Open Graph元標記。"
+msgstr "创建Open Graph元标记."
 
 #: views/settings.php:104
 msgid ""
 "Do not generate Open Graph meta tags. Select this option if you are using a "
 "plugin that already has the same functionality."
-msgstr ""
-"不要生成Open Graph元標記。 如果您使用的插件已具有相同的功能，請選擇此選項。"
+msgstr "若您不需要此功能，请将其关闭."
 
 #: views/settings.php:108
 msgid "Thumbnail Size"
-msgstr "縮略圖大小"
+msgstr "图片解析度"
 
 #: views/settings.php:112
 msgid "A function for adjusting the size of thumbnail image in Dable widget."
-msgstr "用於在Dable小部件中調整縮略圖圖像大小的功能。"
+msgstr "调整Dable widget内的显示图片解析度."
 
 #: views/settings.php:131
 msgid "Widget Setting"
-msgstr "小工具設置"
+msgstr "Widget设定"
 
 #: views/settings.php:132
 msgid "Widget"
-msgstr "Widget"
+msgstr "Widget Script"
 
 #: views/settings.php:137
 msgid "Script for Responsive Web"
-msgstr "響應式Web腳本"
+msgstr "响应式网页script"
 
 #: views/settings.php:141
 msgid "Script for PC/Mobile Web"
-msgstr "PC /移動網絡腳本"
+msgstr "桌机/行动版网页script"
 
 #: views/settings.php:154
 msgid "Bottom of article"
-msgstr "文章的底部"
+msgstr "文章末端"
 
 #: views/settings.php:157 views/settings.php:213 views/settings.php:267
 msgid "This widget is exposed at the bottom of the by-line."
-msgstr "此窗口小部件顯示在作者的底部。"
+msgstr "Widget显示于文章末端."
 
 #: views/settings.php:172
 msgid "Left side of article"
-msgstr "文章的左側"
+msgstr "文章左上角"
 
 #: views/settings.php:175 views/settings.php:231 views/settings.php:285
 msgid "This widget is exposed in the top left corner."
-msgstr "此小部件顯示在左上角。"
+msgstr "Widget显示于文章左上角."
 
 #: views/settings.php:190
 msgid "Right side of article"
-msgstr "文章的右側"
+msgstr "文章右侧"
 
 #: views/settings.php:193 views/settings.php:249 views/settings.php:303
 msgid "This widget is exposed in the top right corner."
-msgstr "此小部件顯示在右上角。"
+msgstr "Widget显示于文章右侧."
 
 #: views/settings.php:210
 msgid "PC Bottom of article"
-msgstr "PC文章底部"
+msgstr "PC版文末"
 
 #: views/settings.php:213 views/settings.php:231 views/settings.php:249
 msgid "(PC site only)"
-msgstr "（僅限PC站點）"
+msgstr "(仅适用于PC版)"
 
 #: views/settings.php:228
 msgid "PC Left side of article"
-msgstr "PC文章的左側"
+msgstr "PC版文章左上角"
 
 #: views/settings.php:246
 msgid "PC Right side of article"
-msgstr "PC右側的文章"
+msgstr "PC版文章右侧"
 
 #: views/settings.php:264
 msgid "Mobile Bottom of article"
-msgstr "移動底部的文章"
+msgstr "行动版文末"
 
 #: views/settings.php:267 views/settings.php:285 views/settings.php:303
 msgid "(Mobile site only)"
-msgstr "（僅限移動網站）"
+msgstr "(仅适用于手机版)"
 
 #: views/settings.php:282
 msgid "Mobile Left side of article"
-msgstr "移動文章的左側"
+msgstr "行动版文章左上角"
 
 #: views/settings.php:300
 msgid "Mobile Right side of article"
-msgstr "手機右側的文章"
+msgstr "行动版文章右侧"
 
 #: class.dable-widget.php:15
 msgid "Displays a Dable banner."
-msgstr "顯示Dable橫幅。"
+msgstr "显示Dable横幅."
 
 #: class.dable-widget.php:26
 msgid "Dable widget ID is not defined."
-msgstr "未定義Dable小部件ID。"
+msgstr "未定义Dable小部件ID."
 
 #: class.dable-widget.php:32
 msgid "Begin Dable Script / For inquiries, support@dable.io"
@@ -197,7 +209,7 @@ msgstr "Dable 代码结束 / 若有疑问请洽 support@dable.io"
 
 #: class.dable-widget.php:57
 msgid "Dable widget title"
-msgstr "Dable小部件標題"
+msgstr "Dable小部件标题"
 
 #: class.dable-widget.php:86
 msgid "Widget ID"
@@ -207,7 +219,7 @@ msgstr ""
 msgid ""
 "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
 "a>"
-msgstr "如果您對此不確定，請聯繫<a href=“mailto:%1$s”>％1$s</a>"
+msgstr "如果您对此不确定，请联系<a href=“mailto:%1$s”>％1$s</a>"
 
 #~ msgid "Enter widget script."
 #~ msgstr "请输入 widget 代码"

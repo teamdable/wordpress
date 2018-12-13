@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - Name: dable-for-wordpress - Development "
 "(trunk)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
-"POT-Creation-Date: 2018-12-10T13:04:18+00:00\n"
-"PO-Revision-Date: 2018-12-10 22:52+0900\n"
+"POT-Creation-Date: 2018-12-13T07:59:40+00:00\n"
+"PO-Revision-Date: 2018-12-13 17:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. Description of the plugin
 msgid "Add Dable widgets and meta tags."
-msgstr "添加Dable小部件和元标记."
+msgstr "添加Dable小部件和元標記."
 
 #. Author of the plugin
 #: class.dable-widget.php:13
@@ -51,8 +51,8 @@ msgid ""
 "inserted in your site. By entering the service name provided via e-mail, the "
 "log collection script will be automatically inserted."
 msgstr ""
-"Log collection script應置於您的站內以達到個人化內容推薦成效。請填入您經由"
-"email收到的網站名稱，log collection script將會自動置入."
+"Log collection script應置於您的站內以達到個人化內容推薦成效.請填入您經由"
+"email收到的網站名稱 (service_name)，log collection script將會自動置入."
 
 #: views/settings.php:27
 msgid "Service Name for Dable Script."
@@ -62,12 +62,20 @@ msgstr "Dable程式碼專用網站名."
 msgid "Content Wrapper Setting"
 msgstr "Content Wrapper 設定"
 
+#: views/settings.php:37
+msgid ""
+"If you turn this ON, the %s tag will automatically wrap the content. Please "
+"set it to ON if you want to use personalized content recommendation service."
+msgstr ""
+"若開啟此設定, %s 將自動套用於所有內容.若您希望使用個人化內容推薦, 請務必啟用"
+"此設定."
+
 #: views/settings.php:46
 msgid ""
 "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
 "it."
 msgstr ""
-"<div itemprop = “articleBody”>將自動啟用於全站內容。若您不需要此功能，請將其"
+"<div itemprop = “articleBody”>將自動套用於全站內容.若您不需要此功能，請將其"
 "關閉."
 
 #: views/settings.php:51
@@ -80,19 +88,22 @@ msgid ""
 "the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
 msgstr ""
 "請選擇您希望出現在widget內的文章類型，如果您希望顯示注意事項或聯絡資訊頁面，"
-"請開啟”Page”選項."
-
-#: views/settings.php:83
-msgid "Open Graph"
-msgstr ""
+"請開啟”頁面”選項."
 
 #: views/settings.php:85
 msgid "Meta Tags"
 msgstr ""
 
+#: views/settings.php:91
+msgid ""
+"By turning this ON create %s meta tags. If you are using a plugin that "
+"already has the same functionality, please set it to OFF."
+msgstr ""
+"啟用此功能以產生%s meta tags，如果您已使用相同功能的plugin，請將其關閉."
+
 #: views/settings.php:100
 msgid "Create Open Graph meta tags."
-msgstr "创建Open Graph元标记."
+msgstr "創建Open Graph元標記."
 
 #: views/settings.php:104
 msgid ""
@@ -182,11 +193,11 @@ msgstr "行動版文章右側"
 
 #: class.dable-widget.php:15
 msgid "Displays a Dable banner."
-msgstr "显示Dable横幅."
+msgstr "顯示Dable橫幅."
 
 #: class.dable-widget.php:26
 msgid "Dable widget ID is not defined."
-msgstr "未定义Dable小部件ID."
+msgstr "未定義Dable小部件ID."
 
 #: class.dable-widget.php:32
 msgid "Begin Dable Script / For inquiries, support@dable.io"
@@ -198,7 +209,7 @@ msgstr "Dable 代碼結束 / 若有疑問請洽 support@dable.io"
 
 #: class.dable-widget.php:57
 msgid "Dable widget title"
-msgstr "Dable小部件标题"
+msgstr "Dable小部件標題"
 
 #: class.dable-widget.php:86
 msgid "Widget ID"
@@ -208,7 +219,7 @@ msgstr ""
 msgid ""
 "If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
 "a>"
-msgstr "如果您对此不确定，请联系<a href=“mailto:%1$s”>％1$s</a>"
+msgstr "如果您對此不確定，請聯繫<a href=“mailto:%1$s”>％1$s</a>"
 
 #~ msgid "Enter widget script."
 #~ msgstr "請輸入 widget 代碼."
