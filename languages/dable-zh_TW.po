@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the Plugins - Name: dable-for-wordpress - Development (trunk) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development "
-"(trunk)\n"
+"Project-Id-Version: Plugins - Name: dable-for-wordpress - Development (trunk)"
+"\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress\n"
 "POT-Creation-Date: 2018-12-13T07:59:40+00:00\n"
-"PO-Revision-Date: 2018-12-13 17:52+0900\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2018-12-21 10:50+0000\n"
+"Last-Translator: dable <sk@dable.io>\n"
+"Language-Team: Chinese (Taiwan)\n"
+"Language: zh-TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.0; wp-4.9.8"
 
 #. Plugin Name of the plugin
 msgid "Dable for WordPress"
@@ -22,7 +23,7 @@ msgstr ""
 
 #. Description of the plugin
 msgid "Add Dable widgets and meta tags."
-msgstr "添加Dable小部件和元標記."
+msgstr "添加Dable Widget和meta tag."
 
 #. Author of the plugin
 #: class.dable-widget.php:13
@@ -35,7 +36,7 @@ msgstr "http://dable.io/tw"
 
 #: views/settings.php:9
 msgid "Default Settings"
-msgstr "主要配置(必填)"
+msgstr "基本設定(必填)"
 
 #: views/settings.php:10
 msgid "Please enter the required default settings"
@@ -51,8 +52,8 @@ msgid ""
 "inserted in your site. By entering the service name provided via e-mail, the "
 "log collection script will be automatically inserted."
 msgstr ""
-"Log collection script應置於您的站內以達到個人化內容推薦成效.請填入您經由"
-"email收到的網站名稱 (service_name)，log collection script將會自動置入."
+"Log collection script應置於您的站內以達到個人化內容推薦成效.請填入您經由email收到的網站名稱 (service_name)"
+"，log collection script將會自動置入."
 
 #: views/settings.php:27
 msgid "Service Name for Dable Script."
@@ -66,17 +67,13 @@ msgstr "Content Wrapper 設定"
 msgid ""
 "If you turn this ON, the %s tag will automatically wrap the content. Please "
 "set it to ON if you want to use personalized content recommendation service."
-msgstr ""
-"若開啟此設定, %s 將自動套用於所有內容.若您希望使用個人化內容推薦, 請務必啟用"
-"此設定."
+msgstr "若開啟此設定, %s 將自動套用於所有內容.若您希望使用個人化內容推薦, 請務必啟用此設定."
 
 #: views/settings.php:46
 msgid ""
 "Wrap content with <div itemprop=\"articleBody\">. Uncheck if you do not need "
 "it."
-msgstr ""
-"<div itemprop = “articleBody”>將自動套用於全站內容.若您不需要此功能，請將其"
-"關閉."
+msgstr "<div itemprop = “articleBody”>將自動套用於全站內容.若您不需要此功能，請將其關閉."
 
 #: views/settings.php:51
 msgid "Target Post Types"
@@ -86,9 +83,7 @@ msgstr "文章類型"
 msgid ""
 "Please select the type of posts you would like to include in the widget. Set "
 "the \"Pages\" button to \"ON\" if you want to expose notice or contact pages."
-msgstr ""
-"請選擇您希望出現在widget內的文章類型，如果您希望顯示注意事項或聯絡資訊頁面，"
-"請開啟”頁面”選項."
+msgstr "請選擇您希望出現在widget內的文章類型，如果您希望顯示注意事項或聯絡資訊頁面，請開啟”頁面”選項."
 
 #: views/settings.php:85
 msgid "Meta Tags"
@@ -98,8 +93,7 @@ msgstr ""
 msgid ""
 "By turning this ON create %s meta tags. If you are using a plugin that "
 "already has the same functionality, please set it to OFF."
-msgstr ""
-"啟用此功能以產生%s meta tags，如果您已使用相同功能的plugin，請將其關閉."
+msgstr "啟用此功能以產生%s meta tags，如果您已使用相同功能的plugin，請將其關閉."
 
 #: views/settings.php:100
 msgid "Create Open Graph meta tags."
@@ -145,11 +139,11 @@ msgstr "Widget顯示於文章末端."
 
 #: views/settings.php:172
 msgid "Left side of article"
-msgstr "文章左上角"
+msgstr "文章左側"
 
 #: views/settings.php:175 views/settings.php:231 views/settings.php:285
 msgid "This widget is exposed in the top left corner."
-msgstr "Widget顯示於文章左上角."
+msgstr "Widget顯示於文章左側."
 
 #: views/settings.php:190
 msgid "Right side of article"
@@ -169,7 +163,7 @@ msgstr "(僅適用於PC版)"
 
 #: views/settings.php:228
 msgid "PC Left side of article"
-msgstr "PC版文章左上角"
+msgstr "PC版文章左側"
 
 #: views/settings.php:246
 msgid "PC Right side of article"
@@ -185,7 +179,7 @@ msgstr "(僅適用於手機版)"
 
 #: views/settings.php:282
 msgid "Mobile Left side of article"
-msgstr "行動版文章左上角"
+msgstr "行動版文章左側"
 
 #: views/settings.php:300
 msgid "Mobile Right side of article"
@@ -193,11 +187,11 @@ msgstr "行動版文章右側"
 
 #: class.dable-widget.php:15
 msgid "Displays a Dable banner."
-msgstr "顯示Dable橫幅."
+msgstr "顯示Dable banner."
 
 #: class.dable-widget.php:26
 msgid "Dable widget ID is not defined."
-msgstr "未定義Dable小部件ID."
+msgstr "未定義Dable widget ID."
 
 #: class.dable-widget.php:32
 msgid "Begin Dable Script / For inquiries, support@dable.io"
@@ -209,7 +203,7 @@ msgstr "Dable 代碼結束 / 若有疑問請洽 support@dable.io"
 
 #: class.dable-widget.php:57
 msgid "Dable widget title"
-msgstr "Dable小部件標題"
+msgstr "Dable widget標題"
 
 #: class.dable-widget.php:86
 msgid "Widget ID"
@@ -217,15 +211,6 @@ msgstr ""
 
 #: class.dable-widget.php:97
 msgid ""
-"If you are not sure about this, please contact <a href=\"mailto:%1$s\">%1$s</"
-"a>"
+"If you are not sure about this, please contact <a href=\"mailto:%1$s\">"
+"%1$s</a>"
 msgstr "如果您對此不確定，請聯繫<a href=“mailto:%1$s”>％1$s</a>"
-
-#~ msgid "Enter widget script."
-#~ msgstr "請輸入 widget 代碼."
-
-#~ msgid "Adds meta tags for Dable and SEO."
-#~ msgstr "新增 Dable 和 SEO 用 meta 標籤."
-
-#~ msgid "Settings"
-#~ msgstr "設定"
