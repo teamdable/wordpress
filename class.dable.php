@@ -56,7 +56,7 @@ class Dable
 
 		$meta = array(
 			'dable:item_id' => $post->ID,
-			'article:published_time' => get_the_date( 'c', $post ),
+			'dable:published_time' => get_post_time( 'c', false, $post, false ),
 			'dable:author' => get_the_author_meta( 'display_name', $post->post_author ),
 		);
 
@@ -70,6 +70,8 @@ class Dable
 			$meta['og:url'] = get_permalink( $post );
 			$meta['og:title'] = get_the_title( $post );
 			$meta['og:description'] = get_the_excerpt( $post );
+			$meta['article:published_time'] = $meta['dable:published_time'];
+			// TODO : change option variable's name to embrace article:published_time
 		} else {
 			unset( $meta['og:image'] );
 		}
