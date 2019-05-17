@@ -57,6 +57,7 @@ class Dable
 		$meta = array(
 			'dable:item_id' => $post->ID,
 			'article:published_time' => get_the_date( 'c', $post ),
+			'dable:author' => get_the_author_meta( 'display_name', $post->post_author ),
 		);
 
 		$thumbnail = $this->get_thumbnail( $post );
