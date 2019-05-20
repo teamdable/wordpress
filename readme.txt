@@ -78,9 +78,13 @@ No notice
 * Resize thumbnails
 
 = 3.0.2 =
-* Revised settings panel design
+* Revise settings panel design
 * Show Dable news in plugin settings page
-* Added i18n support
+* Add i18n support
 
 = 3.0.3 =
 * Polished translations
+
+= 3.1.0 =
+* Add dable:author meta tag
+* Change article:published_time to dable:published_time
