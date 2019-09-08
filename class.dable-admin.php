@@ -110,8 +110,6 @@ class DableAdmin {
 	public function sanitize( $input ) {
 		$valid_keys = array(
 			// Default settings
-			'service_name' => 'string',
-			'service_name_mobile' => 'string',
 			'wrap_content' => 'bool',
 
 			// Open Graph settings
