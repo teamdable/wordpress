@@ -8,24 +8,6 @@
 		<section>
 			<h2><?php esc_html_e('Default Settings', 'dable'); ?></h2>
 			<p><?php esc_html_e('Please enter the required default settings', 'dable'); ?></p>
-			<h3>
-				<?php esc_html_e('Service Name', 'dable'); ?>
-				<button type="button" class="toggle"><span class="dashicons dashicons-editor-help"></span></button>
-			</h3>
-			<p class="desc">
-				<?php esc_html_e('For personalized content recommendation, the log collection script should be inserted in your site. By entering the service name provided via e-mail, the log collection script will be automatically inserted.', 'dable'); ?>
-			</p>
-			<p>
-				<span class="dable-input-tag">
-					<label for="service_name_desktop" class="dable-input-tag__tag"><?php esc_html_e( 'Desktop' ); ?></label>
-					<input type="text" id="service_name_desktop" name="dable-settings[service_name]" class="regular-text dable-input-tag__input" value="<?php echo esc_attr( $this->get_option( 'service_name', '' ) ); ?>">
-				</span>
-				<span class="dable-input-tag">
-					<label for="service_name_mobile" class="dable-input-tag__tag"><?php esc_html_e( 'Mobile' ); ?></label>
-					<input type="text" id="service_name_mobile" name="dable-settings[service_name_mobile]" class="regular-text dable-input-tag__input" value="<?php echo esc_attr( $this->get_option( 'service_name_mobile', '' ) ); ?>">
-				</span>
-				<span><?php esc_html_e('Service Name for Dable Script.', 'dable'); ?></span>
-			</p>
 
 			<h3>
 				<?php esc_html_e('Content Wrapper Setting', 'dable'); ?>
