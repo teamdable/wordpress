@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 3.1.0
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,3 +88,7 @@ No notice
 = 3.1.0 =
 * Add dable:author meta tag
 * Change article:published_time to dable:published_time
+
+= 3.2.0 =
+* Remove service name setting UI
+* Upgrade dable log collection script
