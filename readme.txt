@@ -94,4 +94,4 @@ No notice
 * Upgrade dable log collection script
 
 = 3.2.1 =
-* To apply version update 3.2.0 in wordpress plugin page
+* Apply version update 3.2.0 (3.2.0 was not applied perfectly) in wordpress plugin page
