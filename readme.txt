@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 3.2.0
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,3 +92,6 @@ No notice
 = 3.2.0 =
 * Remove service name setting UI
 * Upgrade dable log collection script
+
+= 3.2.1 =
+* To apply version update 3.2.0 in wordpress plugin page
