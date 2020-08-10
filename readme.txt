@@ -97,4 +97,4 @@ No notice
 * Apply version update 3.2.0 (3.2.0 was not applied perfectly) in wordpress plugin page
 
 = 3.2.2 =
-* Update tested versoin.
+* Update tested version.
