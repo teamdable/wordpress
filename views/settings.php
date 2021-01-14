@@ -78,11 +78,11 @@
 			<p class="meta-tags">
 				<?php $print_og_tag = $this->get_option( 'print_og_tag' ); ?>
 				<label for="print_og_tag_1">
-					<input type="radio" id="print_og_tag_1" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, false ); ?> value="">
+					<input type="radio" id="print_og_tag_1" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, true ); ?> value="true">
 					<?php esc_html_e('Create Open Graph meta tags.', 'dable'); ?>
 				</label>
 				<label for="print_og_tag_2">
-					<input type="radio" id="print_og_tag_2" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, true ); ?> value="true">
+					<input type="radio" id="print_og_tag_2" name="dable-og-settings[print_og_tag]" <?php checked( $print_og_tag, false ); ?> value="">
 					<?php esc_html_e('Do not generate Open Graph meta tags. Select this option if you are using a plugin that already has the same functionality.', 'dable'); ?>
 				</label>
 			</p>
