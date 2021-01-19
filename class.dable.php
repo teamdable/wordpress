@@ -67,6 +67,9 @@ class Dable
 		}
 
 		if ( ! empty( $this->options['print_og_tag'] ) ) {
+			// Remove read more tag after 55 words
+			add_filter('excerpt_more', '__return_empty_string');
+
 			$meta['og:url'] = get_permalink( $post );
 			$meta['og:title'] = get_the_title( $post );
 			$meta['og:description'] = get_the_excerpt( $post );
