@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 3.2.4
+Stable tag: 3.2.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,3 +104,6 @@ No notice
 
 = 3.2.4 =
 * Remove read-more tag from og:description
+
+= 3.2.5 =
+* Resize thumbnail if Thumbnail Size setting is updated

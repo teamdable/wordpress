@@ -140,8 +140,12 @@ class Dable
 			// Does it has dable-og-thumbnail size image?
 			$attach_data = wp_get_attachment_metadata( $image_id, true );
 
+			$og_options = get_option( 'dable-og-settings', array() );
+			$org_thumbnail_size = $og_options['thumbnail_size'];
+			$curr_thumbnail_size = $attach_data['sizes']['dable-og-thumbnail']['width'];
+
 			// If not, create a new thumbnail for og:image.
-			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) ) {
+			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) || $org_thumbnail_size !== $curr_thumbnail_size ) {
 				if  ( ! function_exists( 'wp_crop_image' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/image.php';
 				}
