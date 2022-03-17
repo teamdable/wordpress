@@ -139,9 +139,15 @@ class Dable
 		if ( $image_id ) {
 			// Does it has dable-og-thumbnail size image?
 			$attach_data = wp_get_attachment_metadata( $image_id, true );
+			$og_options = get_option( 'dable-og-settings', array() );
+
+			$curr_thumbnail_setting = $og_options['thumbnail_size'];
+			$org_width = is_array($attach_data) ? $attach_data['sizes']['dable-og-thumbnail']['width'] : null;
+			$org_height = is_array($attach_data) ? $attach_data['sizes']['dable-og-thumbnail']['height'] : null;
+			$is_thumbnail_setting_updated = $curr_thumbnail_setting !== $org_width && $curr_thumbnail_setting !== $org_height;
 
 			// If not, create a new thumbnail for og:image.
-			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) ) {
+			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) || $is_thumbnail_setting_updated ) {
 				if  ( ! function_exists( 'wp_crop_image' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/image.php';
 				}
