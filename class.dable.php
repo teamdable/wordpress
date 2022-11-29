@@ -142,12 +142,13 @@ class Dable
 			$og_options = get_option( 'dable-og-settings', array() );
 
 			$curr_thumbnail_setting = $og_options['thumbnail_size'];
-			$org_width = is_array($attach_data) ? $attach_data['sizes']['dable-og-thumbnail']['width'] : null;
-			$org_height = is_array($attach_data) ? $attach_data['sizes']['dable-og-thumbnail']['height'] : null;
+			$has_thumbnail_setting = is_array($attach_data) && isset($attach_data['sizes']) && isset($attach_data['sizes']['dable-og-thumbnail']);
+			$org_width = $has_thumbnail_setting ? $attach_data['sizes']['dable-og-thumbnail']['width'] : null;
+			$org_height = $has_thumbnail_setting ? $attach_data['sizes']['dable-og-thumbnail']['height'] : null;
 			$is_thumbnail_setting_updated = $curr_thumbnail_setting !== $org_width && $curr_thumbnail_setting !== $org_height;
 
 			// If not, create a new thumbnail for og:image.
-			if ( ! is_array($attach_data) || ! isset($attach_data['sizes']['dable-og-thumbnail']) || $is_thumbnail_setting_updated ) {
+			if ( ! $has_thumbnail_setting || $is_thumbnail_setting_updated ) {
 				if  ( ! function_exists( 'wp_crop_image' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/image.php';
 				}
