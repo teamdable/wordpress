@@ -22,7 +22,10 @@ class DableAPI {
 					'default' => 3,
 					'sanitize_callback' => 'absint'
 				)
-			)
+			),
+			// public api는 __return_true 처리하도록 안내하고 있음
+			// 가이드: https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/
+			'permission_callback' => '__return_true'
 		) );
 	}
 
