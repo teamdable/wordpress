@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 5.4
-Stable tag: 3.2.5
+Stable tag: 3.2.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,3 +107,7 @@ No notice
 
 = 3.2.5 =
 * Resize thumbnail if Thumbnail Size setting is updated
+
+= 3.2.6 =
+* Fix bug of thumbnail update
+* Refactor API Route
