@@ -4,13 +4,13 @@ Plugin Name: Dable for WordPress
 Description: Add Dable widgets and meta tags.
 Author: Dable
 Text Domain: dable
-Version: 3.2.6
+Version: 3.3.0
 Author URI: http://dable.io
 Domain Path: /languages
 */
 /**
  * @package dable
- * @version 3.2.6
+ * @version 3.3.0
  */
 
 define( 'DABLE_PLUGIN_VERSION', '3.2.6' );
@@ -23,7 +23,6 @@ require_once DABLE_PLUGIN_DIR . 'class.dable.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable-widget.php';
 
 new Dable();
-new DableAPI();
 
 if ( is_admin() ) {
 	require_once DABLE_PLUGIN_DIR . 'class.dable-admin.php';
