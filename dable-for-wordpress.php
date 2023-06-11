@@ -20,7 +20,6 @@ define( 'DABLE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 require_once DABLE_PLUGIN_DIR . 'lib/functions.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable.php';
-require_once DABLE_PLUGIN_DIR . 'class.dable-api.php';
 require_once DABLE_PLUGIN_DIR . 'class.dable-widget.php';
 
 new Dable();

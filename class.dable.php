@@ -51,13 +51,13 @@ class Dable
 			return;
 		}
 
-		the_post();
-		$post = get_post();
+		$post_id = get_queried_object_id();
+		$post = get_post( $post_id );
 
 		$meta = array(
 			'dable:item_id' => $post->ID,
 			'dable:published_time' => get_post_time( 'c', false, $post, false ),
-			'dable:author' => get_the_author_meta( 'display_name', $post->post_author ),
+			'dable:author' => get_the_author(),
 		);
 
 		$thumbnail = $this->get_thumbnail( $post );
@@ -180,7 +180,7 @@ class Dable
 	}
 
 	public function add_content_wrapper( $content ) {
-		if ( is_feed() ) {
+		if (! is_singular() || ! is_main_query() || ! in_the_loop()) {
 			return $content;
 		}
 
