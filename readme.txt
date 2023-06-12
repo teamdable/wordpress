@@ -3,8 +3,8 @@ Contributors: dabledev, Taegon Kim
 Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
-Tested up to: 5.4
-Stable tag: 3.2.6
+Tested up to: 6.2
+Stable tag: 3.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,3 +111,8 @@ No notice
 = 3.2.6 =
 * Fix bug of thumbnail update
 * Refactor API Route
+
+= 3.3.0 =
+* Tested compatibility with WordPress 6.2
+* Removed the news section.
+* Fixed bugs related to the Open Graph Meta Tags feature.
