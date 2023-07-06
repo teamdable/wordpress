@@ -180,7 +180,7 @@ class Dable
 	}
 
 	public function add_content_wrapper( $content ) {
-		if (! is_singular() || ! is_main_query() || ! in_the_loop()) {
+		if ( is_feed() || ! is_singular() ) {
 			return $content;
 		}
 
