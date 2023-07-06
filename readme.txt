@@ -116,3 +116,6 @@ No notice
 * Tested compatibility with WordPress 6.2
 * Removed the news section.
 * Fixed bugs related to the Open Graph Meta Tags feature.
+
+= 3.3.1 =
+* Fixed compatibility issue with some custom themes.
