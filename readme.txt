@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 6.2
-Stable tag: 3.3.0
+Stable tag: 3.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,3 +119,6 @@ No notice
 
 = 3.3.1 =
 * Fixed compatibility issue with some custom themes.
+
+= 3.3.2 =
+* Fix typo
