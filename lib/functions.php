@@ -1,5 +1,4 @@
 <?php
-
 // Load localized strings
 function dable_textdomain() {
 	load_plugin_textdomain( 'dable', false, 'dable/languages' );
