@@ -180,7 +180,9 @@ class Dable
 	}
 
 	public function add_content_wrapper( $content ) {
-		if ( is_feed() || ! is_singular() ) {
+		// Apply the same eligibility rule as header/meta rendering,
+		// so widgets are only added for the target post types.
+		if ( is_feed() || ! Dable::is_eligible_post_type() ) {
 			return $content;
 		}
 
