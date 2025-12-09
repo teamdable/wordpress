@@ -180,9 +180,8 @@ class Dable
 	}
 
 	public function add_content_wrapper( $content ) {
-		// Apply the same eligibility rule as header/meta rendering,
-		// so widgets are only added for the target post types.
-		if ( is_feed() || is_home() || is_front_page() || ! Dable::is_eligible_post_type() ) {
+		// Widgets should only appear on individual post pages, not on pages, home page, or front page.
+		if ( is_feed() || is_home() || is_front_page() || ! is_singular( 'post' ) ) {
 			return $content;
 		}
 
