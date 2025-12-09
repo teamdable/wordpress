@@ -182,7 +182,7 @@ class Dable
 	public function add_content_wrapper( $content ) {
 		// Apply the same eligibility rule as header/meta rendering,
 		// so widgets are only added for the target post types.
-		if ( is_feed() || ! Dable::is_eligible_post_type() ) {
+		if ( is_feed() || is_home() || is_front_page() || ! Dable::is_eligible_post_type() ) {
 			return $content;
 		}
 
