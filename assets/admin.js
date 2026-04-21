@@ -1,10 +1,24 @@
 // Dable for WordPress: Admin
 jQuery( function($){
 	$( 'input[name="dable-widget-settings\\[widget_type\\]"]' ).on( 'click', function() {
-		$( 'fieldset[class*="dable-widget-"]' )
-			.addClass( 'hidden' )
-			.filter( '[class*="dable-widget-' + this.value + '"]' )
-				.removeClass( 'hidden' );
+		$( '.dable-widget-responsive, .dable-widget-platform' )
+			.addClass( 'hidden' );
+		$( '.dable-widget-' + this.value )
+			.removeClass( 'hidden' );
+	} );
+
+	// Category tabs
+	$( '.dable-category-tabs a' ).on( 'click', function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var target = $this.data('tab');
+		var $section = $this.closest('section');
+
+		$section.find('.dable-category-tabs a').removeClass('nav-tab-active');
+		$this.addClass('nav-tab-active');
+
+		$section.find('.dable-category-panel').addClass('hidden');
+		$section.find('.dable-category-panel[data-category="' + target + '"]').removeClass('hidden');
 	} );
 
 	$( '.wrap.dable button.toggle' ).on('click', function() {

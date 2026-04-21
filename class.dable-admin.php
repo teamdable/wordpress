@@ -120,25 +120,23 @@ class DableAdmin {
 
 			// Widget settings
 			'widget_type' => 'string',
-			'widget_code_responsive_bottom' => 'string',
-			'widget_code_responsive_left' => 'string',
-			'widget_code_responsive_right' => 'string',
-			'widget_code_pc_bottom' => 'string',
-			'widget_code_pc_left' => 'string',
-			'widget_code_pc_right' => 'string',
-			'widget_code_mobile_bottom' => 'string',
-			'widget_code_mobile_left' => 'string',
-			'widget_code_mobile_right' => 'string',
-			'display_widget_responsive_bottom' => 'bool',
-			'display_widget_responsive_left' => 'bool',
-			'display_widget_responsive_right' => 'bool',
-			'display_widget_pc_bottom' => 'bool',
-			'display_widget_pc_left' => 'bool',
-			'display_widget_pc_right' => 'bool',
-			'display_widget_mobile_bottom' => 'bool',
-			'display_widget_mobile_left' => 'bool',
-			'display_widget_mobile_right' => 'bool',
 		);
+
+		// Dynamically add widget keys for all platform/category/position combos
+		$plat_keys = array( 'responsive', 'pc', 'mobile' );
+		$cat_positions = array(
+			'post'    => array( 'top', 'in_article', 'bottom', 'bottom2' ),
+			'page'    => array( 'top', 'bottom', 'bottom2' ),
+			'archive' => array( 'bottom', 'bottom2' ),
+		);
+		foreach ( $plat_keys as $plat ) {
+			foreach ( $cat_positions as $cat => $positions ) {
+				foreach ( $positions as $pos ) {
+					$valid_keys[ "widget_code_{$plat}_{$cat}_{$pos}" ] = 'string';
+					$valid_keys[ "display_widget_{$plat}_{$cat}_{$pos}" ] = 'bool';
+				}
+			}
+		}
 
 		$new_input = array();
 		foreach ( $valid_keys as $key => $type ) {

@@ -123,172 +123,90 @@
 					<?php esc_html_e('Script for PC/Mobile Web', 'dable'); ?>
 				</label>
 			</p>
-			<fieldset class="dable-widget-responsive <?php echo 'responsive' !== $widget_type ? 'hidden' : ''; ?>">
-				<p>
-					<label for="display_widget_responsive_bottom">
-						<input
-							type="checkbox"
-							id="display_widget_responsive_bottom"
-							name="dable-widget-settings[display_widget_responsive_bottom]"
-							<?php echo $this->get_option( 'display_widget_responsive_bottom' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Bottom of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed at the bottom of the by-line.', 'dable' ); ?>"
-						name="dable-widget-settings[widget_code_responsive_bottom]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_responsive_bottom' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_responsive_left">
-						<input
-							type="checkbox"
-							id="display_widget_responsive_left"
-							name="dable-widget-settings[display_widget_responsive_left]"
-							<?php echo $this->get_option( 'display_widget_responsive_left' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Left side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top left corner.', 'dable' ); ?>"
-						name="dable-widget-settings[widget_code_responsive_left]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_responsive_left' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_responsive_right">
-						<input
-							type="checkbox"
-							id="display_widget_responsive_right"
-							name="dable-widget-settings[display_widget_responsive_right]"
-							<?php echo $this->get_option( 'display_widget_responsive_right' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Right side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top right corner.', 'dable' ); ?>"
-						name="dable-widget-settings[widget_code_responsive_right]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_responsive_right' ) ); ?></textarea>
-				</p>
-			</fieldset>
-			<fieldset class="dable-widget-platform <?php echo 'platform' !== $widget_type ? 'hidden' : ''; ?>">
-				<p>
-					<label for="display_widget_pc_bottom">
-						<input
-							type="checkbox"
-							id="display_widget_pc_bottom"
-							name="dable-widget-settings[display_widget_pc_bottom]"
-							<?php echo $this->get_option( 'display_widget_pc_bottom' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('PC Bottom of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed at the bottom of the by-line.', 'dable' ); ?><?php esc_attr_e('(PC site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_pc_bottom]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_pc_bottom' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_pc_left">
-						<input
-							type="checkbox"
-							id="display_widget_pc_left"
-							name="dable-widget-settings[display_widget_pc_left]"
-							<?php echo $this->get_option( 'display_widget_pc_left' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('PC Left side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top left corner.', 'dable' ); ?><?php esc_attr_e('(PC site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_pc_left]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_pc_left' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_pc_right">
-						<input
-							type="checkbox"
-							id="display_widget_pc_right"
-							name="dable-widget-settings[display_widget_pc_right]"
-							<?php echo $this->get_option( 'display_widget_pc_right' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('PC Right side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top right corner.', 'dable' ); ?><?php esc_attr_e('(PC site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_pc_right]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_pc_right' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_mobile_bottom">
-						<input
-							type="checkbox"
-							id="display_widget_mobile_bottom"
-							name="dable-widget-settings[display_widget_mobile_bottom]"
-							<?php echo $this->get_option( 'display_widget_mobile_bottom' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Mobile Bottom of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed at the bottom of the by-line.', 'dable' ); ?><?php esc_attr_e('(Mobile site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_mobile_bottom]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_mobile_bottom' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_mobile_left">
-						<input
-							type="checkbox"
-							id="display_widget_mobile_left"
-							name="dable-widget-settings[display_widget_mobile_left]"
-							<?php echo $this->get_option( 'display_widget_mobile_left' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Mobile Left side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top left corner.', 'dable' ); ?><?php esc_attr_e('(Mobile site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_mobile_left]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_mobile_left' ) ); ?></textarea>
-				</p>
-				<p>
-					<label for="display_widget_mobile_right">
-						<input
-							type="checkbox"
-							id="display_widget_mobile_right"
-							name="dable-widget-settings[display_widget_mobile_right]"
-							<?php echo $this->get_option( 'display_widget_mobile_right' ) ? 'checked' : '' ?>
-							value="true"
-						>
-						<span><?php esc_html_e('Mobile Right side of article', 'dable'); ?></span>
-					</label>
-					<textarea
-						placeholder="<?php esc_attr_e( 'This widget is exposed in the top right corner.', 'dable' ); ?><?php esc_attr_e('(Mobile site only)', 'dable'); ?>"
-						name="dable-widget-settings[widget_code_mobile_right]"
-						class="large-text"
-						rows="4"
-					><?php echo esc_html( $this->get_option( 'widget_code_mobile_right' ) ); ?></textarea>
-				</p>
-			</fieldset>
+
+			<?php
+				$categories = array(
+					'post' => array(
+						'label' => __('Post', 'dable'),
+						'positions' => array(
+							'top'        => __('Top of article', 'dable'),
+							'in_article' => __('In-Article (after 2nd paragraph)', 'dable'),
+							'bottom'     => __('Bottom of article', 'dable'),
+							'bottom2'    => __('Bottom of article 2', 'dable'),
+						),
+					),
+					'page' => array(
+						'label' => __('Page', 'dable'),
+						'positions' => array(
+							'top'     => __('Top of article', 'dable'),
+							'bottom'  => __('Bottom of article', 'dable'),
+							'bottom2' => __('Bottom of article 2', 'dable'),
+						),
+					),
+					'archive' => array(
+						'label' => __('Archive', 'dable'),
+						'positions' => array(
+							'bottom'  => __('Bottom of page', 'dable'),
+							'bottom2' => __('Bottom of page 2', 'dable'),
+						),
+					),
+				);
+
+				$platforms = array(
+					'responsive' => array( 'responsive' => '' ),
+					'platform'   => array(
+						'pc'     => __('PC', 'dable'),
+						'mobile' => __('Mobile', 'dable'),
+					),
+				);
+			?>
+
+			<nav class="nav-tab-wrapper dable-category-tabs">
+				<?php $first = true; foreach ( $categories as $cat_key => $category ) : ?>
+				<a href="#" class="nav-tab <?php echo $first ? 'nav-tab-active' : ''; ?>" data-tab="<?php echo esc_attr( $cat_key ); ?>">
+					<?php echo esc_html( $category['label'] ); ?>
+				</a>
+				<?php $first = false; endforeach; ?>
+			</nav>
+
+			<?php $first = true; foreach ( $categories as $cat_key => $category ) : ?>
+			<div class="dable-category-panel <?php echo ! $first ? 'hidden' : ''; ?>" data-category="<?php echo esc_attr( $cat_key ); ?>" style="padding: 15px 0;">
+
+				<?php foreach ( $platforms as $platform_type => $platform_list ) : ?>
+				<div class="dable-widget-<?php echo esc_attr( $platform_type ); ?> <?php echo $widget_type !== $platform_type ? 'hidden' : ''; ?>">
+					<?php foreach ( $platform_list as $plat_key => $plat_label ) : ?>
+						<?php if ( ! empty( $plat_label ) ) : ?>
+							<h4><?php echo esc_html( $plat_label ); ?></h4>
+						<?php endif; ?>
+
+						<?php foreach ( $category['positions'] as $pos_key => $pos_label ) :
+							$field_key = $plat_key . '_' . $cat_key . '_' . $pos_key;
+							$display_id = 'display_widget_' . $field_key;
+							$code_name = 'widget_code_' . $field_key;
+						?>
+						<p>
+							<label for="<?php echo esc_attr( $display_id ); ?>">
+								<input
+									type="checkbox"
+									id="<?php echo esc_attr( $display_id ); ?>"
+									name="dable-widget-settings[<?php echo esc_attr( $display_id ); ?>]"
+									<?php echo $this->get_option( $display_id ) ? 'checked' : '' ?>
+									value="true"
+								>
+								<span><?php echo esc_html( ( ! empty( $plat_label ) ? $plat_label . ' ' : '' ) . $pos_label ); ?></span>
+							</label>
+							<textarea
+								name="dable-widget-settings[<?php echo esc_attr( $code_name ); ?>]"
+								class="large-text"
+								rows="4"
+							><?php echo esc_html( $this->get_option( $code_name ) ); ?></textarea>
+						</p>
+						<?php endforeach; ?>
+					<?php endforeach; ?>
+				</div>
+				<?php endforeach; ?>
+			</div>
+			<?php $first = false; endforeach; ?>
 		</section>
 
 		<?php submit_button(); ?>
