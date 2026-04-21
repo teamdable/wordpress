@@ -78,24 +78,19 @@ function dable_migrate_from_3_to_4() {
 		$widget_settings = get_option( 'dable-widget-settings', array() );
 
 		$platforms = array( 'responsive', 'pc', 'mobile' );
-		$target_categories = array( 'post', 'page', 'archive' );
 
 		foreach ( $platforms as $plat ) {
-			// Migrate bottom to all categories
+			// Migrate bottom to post only (old version only supported post)
 			$old_code = "widget_code_{$plat}_bottom";
 			$old_display = "display_widget_{$plat}_bottom";
 
 			if ( isset( $widget_settings[ $old_code ] ) ) {
-				foreach ( $target_categories as $cat ) {
-					$widget_settings[ "widget_code_{$plat}_{$cat}_bottom" ] = $widget_settings[ $old_code ];
-				}
+				$widget_settings[ "widget_code_{$plat}_post_bottom" ] = $widget_settings[ $old_code ];
 				unset( $widget_settings[ $old_code ] );
 			}
 
 			if ( isset( $widget_settings[ $old_display ] ) ) {
-				foreach ( $target_categories as $cat ) {
-					$widget_settings[ "display_widget_{$plat}_{$cat}_bottom" ] = $widget_settings[ $old_display ];
-				}
+				$widget_settings[ "display_widget_{$plat}_post_bottom" ] = $widget_settings[ $old_display ];
 				unset( $widget_settings[ $old_display ] );
 			}
 
