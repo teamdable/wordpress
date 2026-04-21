@@ -66,3 +66,52 @@ function dable_migrate_from_2_to_3() {
 
 	return true;
 }
+
+function dable_migrate_from_3_to_4() {
+	$sites = is_multisite() ? get_sites() : array( true );
+
+	foreach ( $sites as $site ) {
+		if ( is_multisite() ) {
+			switch_to_blog( $site->blog_id );
+		}
+
+		$widget_settings = get_option( 'dable-widget-settings', array() );
+
+		$platforms = array( 'responsive', 'pc', 'mobile' );
+		$target_categories = array( 'post', 'page', 'archive' );
+
+		foreach ( $platforms as $plat ) {
+			// Migrate bottom to all categories
+			$old_code = "widget_code_{$plat}_bottom";
+			$old_display = "display_widget_{$plat}_bottom";
+
+			if ( isset( $widget_settings[ $old_code ] ) ) {
+				foreach ( $target_categories as $cat ) {
+					$widget_settings[ "widget_code_{$plat}_{$cat}_bottom" ] = $widget_settings[ $old_code ];
+				}
+				unset( $widget_settings[ $old_code ] );
+			}
+
+			if ( isset( $widget_settings[ $old_display ] ) ) {
+				foreach ( $target_categories as $cat ) {
+					$widget_settings[ "display_widget_{$plat}_{$cat}_bottom" ] = $widget_settings[ $old_display ];
+				}
+				unset( $widget_settings[ $old_display ] );
+			}
+
+			// Remove deprecated left/right keys
+			foreach ( array( 'left', 'right' ) as $deprecated ) {
+				unset( $widget_settings[ "widget_code_{$plat}_{$deprecated}" ] );
+				unset( $widget_settings[ "display_widget_{$plat}_{$deprecated}" ] );
+			}
+		}
+
+		update_option( 'dable-widget-settings', $widget_settings );
+
+		if ( is_multisite() ) {
+			restore_current_blog();
+		}
+	}
+
+	return true;
+}
