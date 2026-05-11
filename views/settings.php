@@ -131,6 +131,8 @@
 						'positions' => array(
 							'top'        => __('Top of article', 'dable'),
 							'in_article' => __('In-Article (after 2nd paragraph)', 'dable'),
+							'left'       => __('Left of article', 'dable'),
+							'right'      => __('Right of article', 'dable'),
 							'bottom'     => __('Bottom of article', 'dable'),
 							'bottom2'    => __('Bottom of article 2', 'dable'),
 						),
@@ -139,6 +141,8 @@
 						'label' => __('Page', 'dable'),
 						'positions' => array(
 							'top'     => __('Top of article', 'dable'),
+							'left'    => __('Left of article', 'dable'),
+							'right'   => __('Right of article', 'dable'),
 							'bottom'  => __('Bottom of article', 'dable'),
 							'bottom2' => __('Bottom of article 2', 'dable'),
 						),

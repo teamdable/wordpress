@@ -236,6 +236,12 @@ class Dable
 		$key = $this->get_platform_key();
 		$cat = is_singular( 'post' ) ? 'post' : 'page';
 
+		// Left
+		$content = $this->get_widget_code( "{$key}_{$cat}_left" ) . $content;
+
+		// Right
+		$content = $this->get_widget_code( "{$key}_{$cat}_right" ) . $content;
+
 		// Top
 		$content = $this->get_widget_code( "{$key}_{$cat}_top" ) . $content;
 

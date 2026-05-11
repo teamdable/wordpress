@@ -125,8 +125,8 @@ class DableAdmin {
 		// Dynamically add widget keys for all platform/category/position combos
 		$plat_keys = array( 'responsive', 'pc', 'mobile' );
 		$cat_positions = array(
-			'post'    => array( 'top', 'in_article', 'bottom', 'bottom2' ),
-			'page'    => array( 'top', 'bottom', 'bottom2' ),
+			'post'    => array( 'top', 'in_article', 'left', 'right', 'bottom', 'bottom2' ),
+			'page'    => array( 'top', 'left', 'right', 'bottom', 'bottom2' ),
 			'archive' => array( 'bottom', 'bottom2' ),
 		);
 		foreach ( $plat_keys as $plat ) {

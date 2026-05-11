@@ -94,10 +94,20 @@ function dable_migrate_from_3_to_4() {
 				unset( $widget_settings[ $old_display ] );
 			}
 
-			// Remove deprecated left/right keys
-			foreach ( array( 'left', 'right' ) as $deprecated ) {
-				unset( $widget_settings[ "widget_code_{$plat}_{$deprecated}" ] );
-				unset( $widget_settings[ "display_widget_{$plat}_{$deprecated}" ] );
+			// Migrate left/right to post category
+			foreach ( array( 'left', 'right' ) as $pos ) {
+				$old_code = "widget_code_{$plat}_{$pos}";
+				$old_display = "display_widget_{$plat}_{$pos}";
+
+				if ( isset( $widget_settings[ $old_code ] ) ) {
+					$widget_settings[ "widget_code_{$plat}_post_{$pos}" ] = $widget_settings[ $old_code ];
+					unset( $widget_settings[ $old_code ] );
+				}
+
+				if ( isset( $widget_settings[ $old_display ] ) ) {
+					$widget_settings[ "display_widget_{$plat}_post_{$pos}" ] = $widget_settings[ $old_display ];
+					unset( $widget_settings[ $old_display ] );
+				}
 			}
 		}
 
