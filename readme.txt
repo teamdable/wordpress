@@ -4,7 +4,7 @@ Donate link: http://dable.io/
 Tags: dable
 Requires at least: 4.6
 Tested up to: 6.2
-Stable tag: 3.3.5
+Stable tag: 4.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,3 +131,10 @@ No notice
 
 = 3.3.5 =
 * Fix: Prevent widgets from appearing on home page and front page
+
+= 4.0.0 =
+* Add support for Page and Archive page types (previously Post only)
+* Add new widget positions: Top, In-Article, Bottom 2
+* Remove Left/Right widget positions
+* Reorganize Widget Settings with category tabs (Post/Page/Archive)
+* Widget settings are now per-category for flexible configuration

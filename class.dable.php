@@ -9,6 +9,7 @@ class Dable
 
 		add_action( 'wp_head', array( $this, 'print_header' ) );
 		add_filter( 'the_content',  array( $this, 'add_content_wrapper' ) );
+		add_action( 'wp_footer', array( $this, 'add_archive_widget' ) );
 		add_image_size(
 			'dable-og-thumbnail',
 			$this->options['thumbnail_size'],
@@ -46,60 +47,70 @@ class Dable
 		return is_singular( $post_types );
 	}
 
+	public static function is_eligible_archive() {
+		return is_home() || is_category() || is_tag() || is_archive();
+	}
+
 	public function print_header() {
-		if ( ! Dable::is_eligible_post_type() ) {
+		$is_target_post_type = Dable::is_eligible_post_type();
+		$is_supported_page = is_singular( array( 'post', 'page' ) ) || Dable::is_eligible_archive();
+
+		if ( ! $is_supported_page ) {
 			return;
 		}
 
-		$post_id = get_queried_object_id();
-		$post = get_post( $post_id );
+		// Print meta tags only for target post types (recommendation targets).
+		if ( $is_target_post_type ) {
+			$post_id = get_queried_object_id();
+			$post = get_post( $post_id );
 
-		$meta = array(
-			'dable:item_id' => $post->ID,
-			'dable:published_time' => get_post_time( 'c', false, $post, false ),
-			'dable:author' => get_the_author(),
-		);
+			$meta = array(
+				'dable:item_id' => $post->ID,
+				'dable:published_time' => get_post_time( 'c', false, $post, false ),
+				'dable:author' => get_the_author(),
+			);
 
-		$thumbnail = $this->get_thumbnail( $post );
-		if ( $thumbnail ) {
-			$meta['dable:image'] = $thumbnail;
-			$meta['og:image'] = $thumbnail;
+			$thumbnail = $this->get_thumbnail( $post );
+			if ( $thumbnail ) {
+				$meta['dable:image'] = $thumbnail;
+				$meta['og:image'] = $thumbnail;
+			}
+
+			if ( ! empty( $this->options['print_og_tag'] ) ) {
+				// Remove read more tag after 55 words
+				add_filter('excerpt_more', '__return_empty_string');
+
+				$meta['og:url'] = get_permalink( $post );
+				$meta['og:title'] = get_the_title( $post );
+				$meta['og:description'] = get_the_excerpt( $post );
+				$meta['article:published_time'] = $meta['dable:published_time'];
+				// TODO : change option variable's name to embrace article:published_time
+			} else {
+				unset( $meta['og:image'] );
+			}
+
+			if (
+				get_post_status( $post->ID ) !== 'publish' ||
+				post_password_required( $post ) ||
+				! empty($post->post_password)
+			) {
+				unset( $meta['dable:item_id'] );
+			}
+
+			$categories = get_the_category( $post->ID );
+			foreach ( $categories as $idx=>$category ) {
+				$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
+			}
+
+			rewind_posts();
+
+			// Print meta tags.
+			foreach ( $meta as $property => $content ) {
+				echo '<meta property="' . esc_attr( $property )  . '" content="' . esc_attr( $content ) . '">';
+			}
 		}
 
-		if ( ! empty( $this->options['print_og_tag'] ) ) {
-			// Remove read more tag after 55 words
-			add_filter('excerpt_more', '__return_empty_string');
-
-			$meta['og:url'] = get_permalink( $post );
-			$meta['og:title'] = get_the_title( $post );
-			$meta['og:description'] = get_the_excerpt( $post );
-			$meta['article:published_time'] = $meta['dable:published_time'];
-			// TODO : change option variable's name to embrace article:published_time
-		} else {
-			unset( $meta['og:image'] );
-		}
-
-		if (
-			get_post_status( $post->ID ) !== 'publish' ||
-			post_password_required( $post ) ||
-			! empty($post->post_password)
-		) {
-			unset( $meta['dable:item_id'] );
-		}
-
-		$categories = get_the_category( $post->ID );
-		foreach ( $categories as $idx=>$category ) {
-			$meta[ 'article:section' . ( $idx > 0 ? $idx + 1 : '' ) ] = $category->name;
-		}
-
-		rewind_posts();
-
-		// Print meta tags.
-		foreach ( $meta as $property => $content ) {
-			echo '<meta property="' . esc_attr( $property )  . '" content="' . esc_attr( $content ) . '">';
-		}
-
-		// Print Dable JavaScript.
+		// Print Dable JavaScript for both singular and archive pages.
 		$this->print_script();
 	}
 
@@ -171,6 +182,19 @@ class Dable
 		return null;
 	}
 
+	protected function insert_after_paragraph( $content, $insertion, $paragraph_index ) {
+		$closing_tag = '</p>';
+		$parts = explode( $closing_tag, $content );
+
+		if ( count( $parts ) <= $paragraph_index ) {
+			return $content;
+		}
+
+		$before = implode( $closing_tag, array_slice( $parts, 0, $paragraph_index ) ) . $closing_tag;
+		$after  = implode( $closing_tag, array_slice( $parts, $paragraph_index ) );
+		return $before . $insertion . $after;
+	}
+
 	protected function get_widget_code( $key ) {
 		if ( empty( $this->options[ 'display_widget_' . $key ] ) || empty( $this->options[ 'widget_code_' . $key ] ) ) {
 			return '';
@@ -179,9 +203,30 @@ class Dable
 		return $this->options[ 'widget_code_' . $key ];
 	}
 
+	protected function get_platform_key() {
+		if ( 'platform' === $this->options['widget_type'] ) {
+			return wp_is_mobile() ? 'mobile' : 'pc';
+		}
+		return 'responsive';
+	}
+
+	public function add_archive_widget() {
+		if ( ! Dable::is_eligible_archive() ) {
+			return;
+		}
+
+		$key = $this->get_platform_key();
+		$bottom = $this->get_widget_code( "{$key}_archive_bottom" );
+		$bottom2 = $this->get_widget_code( "{$key}_archive_bottom2" );
+		$output = $bottom . $bottom2;
+
+		if ( ! empty( $output ) ) {
+			echo '<div class="dable-archive-widget">' . $output . '</div>';
+		}
+	}
+
 	public function add_content_wrapper( $content ) {
-		// Widgets should only appear on individual post pages, not on pages, home page, or front page.
-		if ( is_feed() || is_home() || is_front_page() || ! is_singular( 'post' ) ) {
+		if ( is_feed() || ! is_singular( array( 'post', 'page' ) ) ) {
 			return $content;
 		}
 
@@ -189,14 +234,31 @@ class Dable
 			$content = '<div itemprop="articleBody" class="dable-content-wrapper">' . $content . '</div>';
 		}
 
-		$key = 'responsive';
-		if ( 'platform' === $this->options['widget_type'] ) {
-			$key = wp_is_mobile() ? 'mobile' : 'pc';
+		$key = $this->get_platform_key();
+		$cat = is_singular( 'post' ) ? 'post' : 'page';
+
+		// Left
+		$content = $this->get_widget_code( "{$key}_{$cat}_left" ) . $content;
+
+		// Right
+		$content = $this->get_widget_code( "{$key}_{$cat}_right" ) . $content;
+
+		// Top
+		$content = $this->get_widget_code( "{$key}_{$cat}_top" ) . $content;
+
+		// In-Article: insert after 2nd paragraph, Post only
+		if ( 'post' === $cat ) {
+			$in_article = $this->get_widget_code( "{$key}_{$cat}_in_article" );
+			if ( ! empty( $in_article ) ) {
+				$content = $this->insert_after_paragraph( $content, $in_article, 2 );
+			}
 		}
 
-		$content = $this->get_widget_code( "{$key}_left" ) . $content;
-		$content = $this->get_widget_code( "{$key}_right" ) . $content;
-		$content = $content . $this->get_widget_code( "{$key}_bottom" );
+		// Bottom
+		$content = $content . $this->get_widget_code( "{$key}_{$cat}_bottom" );
+
+		// Bottom 2
+		$content = $content . $this->get_widget_code( "{$key}_{$cat}_bottom2" );
 
 		return $content;
 	}
