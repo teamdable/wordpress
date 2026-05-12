@@ -48,7 +48,7 @@ class Dable
 	}
 
 	public static function is_eligible_archive() {
-		return is_home() || is_front_page() || is_category() || is_tag() || is_archive();
+		return is_home() || is_category() || is_tag() || is_archive();
 	}
 
 	public function print_header() {
@@ -190,8 +190,9 @@ class Dable
 			return $content;
 		}
 
-		$parts[ $paragraph_index - 1 ] .= $closing_tag . $insertion;
-		return implode( $closing_tag, $parts );
+		$before = implode( $closing_tag, array_slice( $parts, 0, $paragraph_index ) ) . $closing_tag;
+		$after  = implode( $closing_tag, array_slice( $parts, $paragraph_index ) );
+		return $before . $insertion . $after;
 	}
 
 	protected function get_widget_code( $key ) {
@@ -220,7 +221,7 @@ class Dable
 		$output = $bottom . $bottom2;
 
 		if ( ! empty( $output ) ) {
-			echo '<div class="dable-archive-widget" style="max-width: 1200px; margin: 0 auto; padding: 20px;">' . $output . '</div>';
+			echo '<div class="dable-archive-widget">' . $output . '</div>';
 		}
 	}
 
